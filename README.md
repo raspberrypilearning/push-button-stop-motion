@@ -42,13 +42,13 @@ sudo apt-get install python3-picamera python3-rpi-gpio ffmpeg
 
 ## Steps
 
-0. Setup the Pi and camera board
+1. Setup the Pi and camera board
 1. Test the camera
-2. Take a picture with Python
-3. Connect a hardware button
-4. Take a selfie
-5. Stop motion animation
-6. Compile the video
+1. Take a picture with Python
+1. Connect a hardware button
+1. Take a selfie
+1. Stop motion animation
+1. Compile the video
 
 ## Worksheet
 
