@@ -53,7 +53,7 @@ Before booting your Pi, you'll need to connect the camera and enable it.
         camera.stop_preview()
     ```
 
-1. Select `File > Save` from the menu (or hit `Ctrl + S`) and give your script a name, e.g. `workshop.py`.
+1. Select `File > Save` from the menu (or hit `Ctrl + S`) and save as `animation.py`.
 1. Press `F5` to run the script.
 1. Without closing the Python window, return to the file manager window and you'll see the new file `image2.jpg`. Double click to view the picture.
 1. If the picture is upside-down, you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following lines:
@@ -105,6 +105,7 @@ Before booting your Pi, you'll need to connect the camera and enable it.
 
 1. Save and run your script.
 1. Once the preview has started, press the button connected to your Pi to capture an image.
+1. Return to the file manager window and you should see your `image3.jpg`. Again, double click to view.
 
 ## Step 5: Take a selfie
 
@@ -127,11 +128,12 @@ Before booting your Pi, you'll need to connect the camera and enable it.
     ```
 
 1. Save and run your script.
-1. Press the button and try to take a selfie.
+1. Press the button and try to take a selfie. Be sure to keep the camera still! Ideally, mounted in position.
+1. Again, feel free to check the image in the file manager. Run the program again to take another!
 
 ## Step 6: Stop motion animation
 
-1. First create a new folder to store your stills. In the terminal, enter `mkdir animation`.
+1. Create a new folder to store your stills. In the terminal window, enter `mkdir animation`.
 1. Modify your code to add a loop to keep taking pictures every time the button is pressed:
 
     ```python
@@ -151,13 +153,14 @@ Before booting your Pi, you'll need to connect the camera and enable it.
         camera.stop_preview()
     ```
 
-1. Now set up your animation subject (e.g. LEGO) and run the Python script to begin.
+1. Now set up your animation subject (e.g. LEGO) ready to start the stop motion animation.
+1. This time, do not run the program from IDLE (it will be impossible to break out of the loop). Instead, return to the terminal window and enter `sudo python animation.py`.
 1. Press the button to capture the first frame, then rearrange the animation subject and press the button again to capture each subsequent frame.
-1. Once all the frames have been captured, hit `Ctrl + C` in the IDLE prompt (not the code window) which will terminate the program.
+1. Once all the frames have been captured, hit `Ctrl + C` which will terminate the program.
 
 ## Step 7: Compile the video
 
-1. Now use the `avconf` command to compile each frame in to a video. Enter the following line in to the terminal window.
+1. Now use the `avconf` command to compile each frame in to a video. Carefully enter the following line in to the terminal window.
 
     ```bash
     avconv -y -f image2 -r 10 -i animation/frame%02d.jpg -c:v libxvid -aspect:v 16:9 -q:v 5 animation.mp4
