@@ -50,9 +50,11 @@ sudo apt-get install python3-picamera python3-rpi-gpio ffmpeg
 1. Stop motion animation
 1. Compile the video
 
-## Worksheet
+## Worksheet & included files
 
-Go to the [worksheet](worksheet.md)
+- [The worksheet](worksheet.md)
+- [GPIO diagram](images/picamera-gpio-setup.png)
+- Final version of Python Code [animation.py](code/animation.py)
 
 ## Licence
 
