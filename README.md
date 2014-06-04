@@ -55,6 +55,7 @@ sudo apt-get install python3-picamera python3-rpi.gpio ffmpeg
 - [The worksheet](worksheet.md)
 - [GPIO diagram](images/picamera-gpio-setup.png)
 - Final version of Python Code [animation.py](code/animation.py)
+    - Download with `wget http://goo.gl/ZFsiyP -O animation.py --no-check-certificate`
 
 ## Licence
 
