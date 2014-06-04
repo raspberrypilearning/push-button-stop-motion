@@ -50,6 +50,10 @@ sudo apt-get install python3-picamera python3-rpi-gpio ffmpeg
 5. Stop motion animation
 6. Compile the video
 
+## Worksheet
+
+Go to the [worksheet](worksheet.md)
+
 ## Licence
 
 Unless otherwise specified, everything in this repository is covered by the following licence:
