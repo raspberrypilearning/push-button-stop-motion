@@ -157,16 +157,18 @@ Before booting your Pi, you'll need to connect the camera and enable it.
 1. This time, do not run the program from IDLE (it will be impossible to break out of the loop). Instead, return to the terminal window and enter `sudo python animation.py`.
 1. Press the button to capture the first frame, then rearrange the animation subject and press the button again to capture each subsequent frame.
 1. Once all the frames have been captured, hit `Ctrl + C` which will terminate the program.
+1. Open the `animation` folder in the file manager to see your stills collection.
 
 ## Step 7: Compile the video
 
-1. Now use the `avconf` command to compile each frame in to a video. Carefully enter the following line in to the terminal window.
+1. Now close all windows except the terminal.
+1. Use the `avconf` command to compile each frame in to a video. Carefully enter the following line in to the terminal window:
 
     ```bash
-    avconv -y -f image2 -r 10 -i animation/frame%02d.jpg -c:v libxvid -aspect:v 16:9 -q:v 5 animation.mp4
+    avconv -y -f image2 -r 10 -i animation/frame%03d.jpg -c:v libxvid -aspect:v 16:9 -q:v 5 animation.mp4
     ```
 
-1. With 20 frames this will take about 30 seconds. Once complete, you can play the video with the following command:
+1. With 10 frames this will take about 60 seconds. Once complete, you can play the video with the following command:
 
     ```bash
     omxplayer animation.mp4
