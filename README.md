@@ -24,13 +24,13 @@ As well as a Raspberry Pi with an SD card with Raspbian, you'll also need:
 Install these with the following command:
 
 ```bash
-sudo apt-get install python-picamera python-rpi-gpio ffmpeg
+sudo apt-get install python-picamera python-rpi.gpio ffmpeg
 ```
 
 Alternatively using Python 3, the following command will install the required packages:
 
 ```bash
-sudo apt-get install python3-picamera python3-rpi-gpio ffmpeg
+sudo apt-get install python3-picamera python3-rpi.gpio ffmpeg
 ```
 
 ### Extras
