@@ -52,10 +52,15 @@ sudo apt-get install python3-picamera python3-rpi.gpio ffmpeg
 
 ## Worksheet & included files
 
+You'll need the worksheet for the instructions and the GPIO diagram for the button setup. You will also need to download the Optionally you could use a copy of the final version of the code to save typing it out.
+
 - [The worksheet](worksheet.md)
 - [GPIO diagram](images/picamera-gpio-setup.png)
-- Final version of Python Code [animation.py](code/animation.py)
-    - Download with `wget http://goo.gl/ZFsiyP -O animation.py --no-check-certificate`
+- Video Rendering Bash script [render.sh](code/render.sh)
+    - Download to the home directory with `wget http://goo.gl/ZFsiyP -O animation.py --no-check-certificate`
+- (Optional) Final version of Python Code [animation.py](code/animation.py)
+    - Download with to the home directory with `wget http://goo.gl/V8b2FQ -O render.sh --no-check-certificate`
+    - Make executable with `chmod +x render.sh`
 
 ## Licence
 

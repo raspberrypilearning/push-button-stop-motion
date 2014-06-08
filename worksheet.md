@@ -62,9 +62,9 @@ Before booting your Pi, you'll need to connect the camera and enable it.
     camera.vflip = True
     camera.hflip = True
     ```
-    
+
     inside the `with` loop, so it becomes:
-    
+
     ```python
     import picamera
     from time import sleep
@@ -77,7 +77,7 @@ Before booting your Pi, you'll need to connect the camera and enable it.
         camera.capture('/home/pi/image2.jpg')
         camera.stop_preview()
     ```
-    
+
 1. Run the file again and it will overwrite `image2.jpg` with a new one in the correct orientation. Remember to keep these lines in your code as you alter it in the next few steps.
 
 ## Step 4: Connect a hardware button
@@ -133,7 +133,7 @@ Before booting your Pi, you'll need to connect the camera and enable it.
 
 ## Step 6: Stop motion animation
 
-1. Create a new folder to store your stills. In the terminal window, enter `mkdir animation`.
+1. **IMPORTANT:** Create a new folder to store your stills. In the terminal window, enter `mkdir animation`.
 1. Modify your code to add a loop to keep taking pictures every time the button is pressed:
 
     ```python
@@ -154,18 +154,18 @@ Before booting your Pi, you'll need to connect the camera and enable it.
     ```
 
 1. Now set up your animation subject (e.g. LEGO) ready to start the stop motion animation.
-1. This time, do not run the program from IDLE (it will be impossible to break out of the loop). Instead, return to the terminal window and enter `sudo python animation.py`.
+1. **IMPORTANT** This time, do not run the program from IDLE (it will be impossible to break out of the loop). Instead, return to the terminal window and enter `sudo python animation.py`.
 1. Press the button to capture the first frame, then rearrange the animation subject and press the button again to capture each subsequent frame.
 1. Once all the frames have been captured, hit `Ctrl + C` which will terminate the program.
 1. Open the `animation` folder in the file manager to see your stills collection.
 
 ## Step 7: Compile the video
 
-1. Now close all windows except the terminal.
-1. Use the `avconf` command to compile each frame in to a video. Carefully enter the following line in to the terminal window:
+1. Now return to the terminal window.
+1. Run the video rendering script by typing:
 
     ```bash
-    avconv -y -f image2 -r 10 -i animation/frame%03d.jpg -c:v libxvid -aspect:v 16:9 -q:v 5 animation.mp4
+    ./render.sh
     ```
 
 1. With 10 frames this will take about 60 seconds. Once complete, you can play the video with the following command:
@@ -173,3 +173,6 @@ Before booting your Pi, you'll need to connect the camera and enable it.
     ```bash
     omxplayer animation.mp4
     ```
+
+1. Optionally, you can adjust the frame rate by editing the rendering script. Use `nano render.sh` to edit the file, and change `-r 10` (10 frames per second)` to another number.
+1. You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, edit the file in the same way and change `animation.mp4` to something else.
