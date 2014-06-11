@@ -58,9 +58,9 @@ You'll need the worksheet for the instructions and the GPIO diagram for the butt
 - [GPIO diagram](images/picamera-gpio-setup.png)
 - Video Rendering Bash script [render.sh](code/render.sh)
     - Download to the home directory with `wget http://goo.gl/V8b2FQ -O render.sh --no-check-certificate`
+    - Make executable with `chmod +x render.sh`
 - (Optional) Final version of Python Code [animation.py](code/animation.py)
     - Download to the home directory with `wget http://goo.gl/ZFsiyP -O animation.py --no-check-certificate`
-    - Make executable with `chmod +x render.sh`
 
 ## Licence
 
