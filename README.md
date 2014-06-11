@@ -48,7 +48,7 @@ sudo apt-get install python3-picamera python3-rpi.gpio ffmpeg
 1. Connect a hardware button
 1. Take a selfie
 1. Stop motion animation
-1. Compile the video
+1. Render the video
 
 ## Worksheet & included files
 

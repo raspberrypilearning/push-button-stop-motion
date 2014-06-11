@@ -159,7 +159,7 @@ Before booting your Pi, you'll need to connect the camera and enable it.
 1. Once all the frames have been captured, hit `Ctrl + C` which will terminate the program.
 1. Open the `animation` folder in the file manager to see your stills collection.
 
-## Step 7: Compile the video
+## Step 7: Render the video
 
 1. Now return to the terminal window.
 1. Run the video rendering script by typing:
