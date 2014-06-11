@@ -154,6 +154,7 @@ Before booting your Pi, you'll need to connect the camera and enable it.
     ```
 
 1. Now set up your animation subject (e.g. LEGO) ready to start the stop motion animation.
+2. Create a Folder animation in the /home/pi directory
 1. **IMPORTANT** This time, do not run the program from IDLE (it will be impossible to break out of the loop). Instead, return to the terminal window and enter `sudo python animation.py`.
 1. Press the button to capture the first frame, then rearrange the animation subject and press the button again to capture each subsequent frame.
 1. Once all the frames have been captured, hit `Ctrl + C` which will terminate the program.
