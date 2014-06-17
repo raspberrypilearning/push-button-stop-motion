@@ -1,16 +1,16 @@
-# Push Button Stop Motion
+# Push button stop motion
 
 Make your own stop motion animation rig with a push button, using Python Picamera and GPIO.
 
-You can use LEGO to animate a tower being built, or figures acting out a scene! Or anything else you can think of...
+You can use LEGO to animate a tower being built, figures acting out a scene, or anything else you can think of!
 
 ## Requirements
 
-As well as a Raspberry Pi with an SD card with Raspbian, you'll also need:
+As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need:
 
 ### Hardware
 
-- 1 x [Raspberry Pi Camera Module](http://www.raspberrypi.org/product/camera-module/)
+- 1 x [Raspberry Pi camera module](http://www.raspberrypi.org/product/camera-module/)
 - 1 x Solderless breadboard (e.g. from [Pimoroni](http://shop.pimoroni.com/products/colourful-mini-breadboard))
 - 2 x male-to-female jumper leads (e.g. from [Pimoroni](http://shop.pimoroni.com/products/jumper-jerky))
 - 1 x tactile button (e.g. from [RS Components](http://uk.rs-online.com/web/p/tactile-switches/7182443/))
@@ -27,7 +27,7 @@ Install these with the following command:
 sudo apt-get install python-picamera python-rpi.gpio ffmpeg
 ```
 
-Alternatively using Python 3, the following command will install the required packages:
+Alternatively, using Python 3, the following command will install the required packages:
 
 ```bash
 sudo apt-get install python3-picamera python3-rpi.gpio ffmpeg
@@ -37,12 +37,12 @@ sudo apt-get install python3-picamera python3-rpi.gpio ffmpeg
 
 - Animation subject (e.g. LEGO)
 - Camera mount (optional but useful)
-    - Can be home-made / makeshift (e.g. cardboard and/or blu tack)
+    - Can be home-made (e.g. cardboard and/or Blu-Tack)
     - Can be bought (e.g. from [Pimoroni](http://shop.pimoroni.com/products/raspberry-pi-camera-mount) or [ModMyPi](https://www.modmypi.com/flexible-camera-mount))
 
 ## Steps
 
-1. Setup the Pi and camera board
+1. Set up the Pi and camera board
 1. Test the camera
 1. Take a picture with Python
 1. Connect a hardware button
@@ -52,14 +52,14 @@ sudo apt-get install python3-picamera python3-rpi.gpio ffmpeg
 
 ## Worksheet & included files
 
-You'll need the worksheet for the instructions and the GPIO diagram for the button setup. You will also need to download the Optionally you could use a copy of the final version of the code to save typing it out.
+You'll need the worksheet for the instructions and the GPIO diagram for the button setup. You will also need to download the video rendering Bash script and the final version of the Python code. Optionally, you could use a copy of the code to save typing it out.
 
 - [The worksheet](worksheet.md)
 - [GPIO diagram](images/picamera-gpio-setup.png)
 - Video Rendering Bash script [render.sh](code/render.sh)
     - Download to the home directory with `wget http://goo.gl/V8b2FQ -O render.sh --no-check-certificate`
     - Make executable with `chmod +x render.sh`
-- (Optional) Final version of Python Code [animation.py](code/animation.py)
+- (Optional) Final version of Python code [animation.py](code/animation.py)
     - Download to the home directory with `wget http://goo.gl/ZFsiyP -O animation.py --no-check-certificate`
 
 ## Licence
