@@ -162,17 +162,17 @@ Before booting your Pi, you'll need to connect the camera and enable it.
 ## Step 7: Render the video
 
 1. Now return to the terminal window.
-1. Run the video rendering script by typing:
+1. Run the video rendering command:
 
     ```bash
-    ./render.sh
+    avconv -r 10 -i animation/frame%03d.jpg -vcodec libx264 animation.mp4
     ```
 
-1. With 10 frames this will take about 60 seconds. Once complete, you can play the video with the following command:
+1. With 10 frames this will take about 5 minutes. Once complete, you can play the video with the following command:
 
     ```bash
     omxplayer animation.mp4
     ```
 
-1. Optionally, you can adjust the frame rate by editing the rendering script. Use `nano render.sh` to edit the file, and change `-r 10` (10 frames per second) to another number.
-1. You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, edit the file in the same way and change `animation.mp4` to something else.
+1. Optionally, you can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
+1. You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, change `animation.mp4` to something else.
