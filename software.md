@@ -40,6 +40,27 @@ You'll also need the `ffmpeg` package for the video rendering. Install this with
 sudo apt-get install ffmpeg
 ```
 
+## Enable the camera
+
+One final step: you'll need to enable the camera software in the configuration tool.
+
+### Connecting the camera
+
+1. With the Pi switched off, locate the camera port next to the Ethernet port.
+1. Lift the tab on the top.
+1. Place the strip in the connector, with the blue side facing the Ethernet port.
+1. While holding the strip in place, push down the tab.
+
+### Activate the camera
+
+1. Connect a USB cable to the power socket.
+1. Log in with username `pi` and password `raspberry`.
+1. At the command prompt, enter `sudo raspi-config`.
+1. At the menu, navigate to `Enable Camera`.
+1. Select `Enable`.
+1. Select `Finish`.
+1. Select `Yes` to reboot.
+
 ## Python 2 compatibility
 
 This worksheet works fine in both Python 2 and Python 3. Python 3 is recommended but if you require Python 2 for an extension of the worksheet, simply use the equivalent Python 2 packages when installing, i.e.

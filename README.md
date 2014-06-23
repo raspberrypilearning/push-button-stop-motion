@@ -32,7 +32,6 @@ See more information on checking you have these packages installed, and how to i
 
 ## Steps
 
-1. Set up the Pi and camera board
 1. Test the camera
 1. Take a picture with Python
 1. Connect a hardware button

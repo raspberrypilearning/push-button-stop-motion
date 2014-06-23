@@ -4,9 +4,9 @@ Make your own stop motion animation rig with a push button, using Python Picamer
 
 You can use LEGO to animate a tower being built, figures acting out a scene, or anything else you can think of!
 
-## Step 1: Set up the Pi and camera board
+## Step 1: Test the camera
 
-Before booting your Pi, you'll need to connect the camera and enable it.
+Before booting your Pi, you'll need to connect the camera.
 
 ### Connecting the camera
 
@@ -14,20 +14,11 @@ Before booting your Pi, you'll need to connect the camera and enable it.
 1. Lift the tab on the top.
 1. Place the strip in the connector, with the blue side facing the Ethernet port.
 1. While holding the strip in place, push down the tab.
+1. Turn the power on to boot the Pi.
 
-### Activate the camera
+### Log in and take a test picture
 
-1. Connect a USB cable to the power socket.
 1. Log in with username `pi` and password `raspberry`.
-1. At the command prompt, enter `sudo raspi-config`.
-1. At the menu, navigate to `Enable Camera`.
-1. Select `Enable`.
-1. Select `Finish`.
-1. Select `Yes` to reboot.
-
-## Step 2: Test the camera
-
-1. Log in again with username `pi` and password `raspberry`.
 1. Adjust the camera to point at yourself or an object.
 1. At the command prompt, enter `raspistill -o image1.jpg`.
 1. You should see a preview appear on the screen for a few seconds, and then change briefly while the image is captured. It doesn't matter if the picture is upside-down; we'll come to that later.
@@ -36,7 +27,7 @@ Before booting your Pi, you'll need to connect the camera and enable it.
 1. Once the desktop icons appear, the graphical interface has loaded. Click the file manager icon in the taskbar and you should see some folders and files.
 1. Double-click `image1.jpg` to preview it.
 
-## Step 3: Take a picture with Python
+## Step 2: Take a picture with Python
 
 1. Double-click on `LXTerminal` to open a terminal window, and enter `sudo idle3 &` to start the Python environment.
 1. Select `File > New Window` from the menu to open a Python file editor.
@@ -80,7 +71,7 @@ Before booting your Pi, you'll need to connect the camera and enable it.
 
 1. Run the file again and it will overwrite `image2.jpg` with a new image in the correct orientation. Remember to keep these lines in your code while you alter it in the next few steps.
 
-## Step 4: Connect a hardware button
+## Step 3: Connect a hardware button
 
 1. Connect the Pi to the button as shown in the diagram below:
 
@@ -107,7 +98,7 @@ Before booting your Pi, you'll need to connect the camera and enable it.
 1. Once the preview has started, press the button connected to your Pi to capture an image.
 1. Return to the file manager window and you should see your `image3.jpg`. Again, double-click to view.
 
-## Step 5: Take a selfie
+## Step 4: Take a selfie
 
 1. Modify your program to include a delay after the button wait, as follows:
 
@@ -131,7 +122,7 @@ Before booting your Pi, you'll need to connect the camera and enable it.
 1. Press the button and try to take a selfie. Be sure to keep the camera still! Ideally, it should be mounted in position.
 1. Again, feel free to check the image in the file manager. Run the program again to take another selfie!
 
-## Step 6: Stop motion animation
+## Step 5: Stop motion animation
 
 1. **IMPORTANT:** Create a new folder to store your stills. In the terminal window, enter `mkdir animation`.
 1. Modify your code to add a loop to keep taking pictures every time the button is pressed:
@@ -159,7 +150,7 @@ Before booting your Pi, you'll need to connect the camera and enable it.
 1. Once all the frames have been captured, press `Ctrl + C` which will terminate the program.
 1. Open the `animation` folder in the file manager to see your stills collection.
 
-## Step 7: Render the video
+## Step 6: Render the video
 
 1. Now return to the terminal window.
 1. Run the video rendering command:
