@@ -20,7 +20,7 @@ sudo apt-get install python3-rpi.gpio
 
 ## python3-picamera
 
-The `python3-picamera` package has been installed by default in Raspbian since June 2014 so unless you're using an old image, you'll have it already. To test this, enter the following command:
+The `python3-picamera` package has been installed by default in Raspbian since June 2014 so unless you're using an old image, you'll have it already. To test this, enter the following command (with the camera connected):
 
 ```bash
 python3 -c "import picamera"
