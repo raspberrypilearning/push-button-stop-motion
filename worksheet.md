@@ -38,7 +38,7 @@ Before booting your Pi, you'll need to connect the camera and enable it.
 
 ## Step 3: Take a picture with Python
 
-1. Double-click on `LXTerminal` to open a terminal window, and enter `sudo idle &` to start the Python environment.
+1. Double-click on `LXTerminal` to open a terminal window, and enter `sudo idle3 &` to start the Python environment.
 1. Select `File > New Window` from the menu to open a Python file editor.
 1. Carefully enter the following code (case is important!):
 
@@ -154,7 +154,7 @@ Before booting your Pi, you'll need to connect the camera and enable it.
     ```
 
 1. Now set up your animation subject (e.g. LEGO), ready to start the stop motion animation.
-1. **IMPORTANT** This time, do not run the program from IDLE as it will be impossible to break out of the loop. Instead, return to the terminal window and enter `sudo python animation.py`.
+1. **IMPORTANT** This time, do not run the program from IDLE as it will be impossible to break out of the loop. Instead, return to the terminal window and enter `sudo python3 animation.py`.
 1. Press the button to capture the first frame, then rearrange the animation subject and press the button again to capture each subsequent frame.
 1. Once all the frames have been captured, press `Ctrl + C` which will terminate the program.
 1. Open the `animation` folder in the file manager to see your stills collection.

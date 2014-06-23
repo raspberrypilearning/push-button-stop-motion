@@ -17,21 +17,11 @@ As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need
 
 ### Software
 
-- python-picamera
-- python-rpi.gpio
+- python3-rpi.gpio
+- python3-picamera
 - ffmpeg
 
-Install these with the following command:
-
-```bash
-sudo apt-get install python-picamera python-rpi.gpio ffmpeg
-```
-
-Alternatively, using Python 3, the following command will install the required packages:
-
-```bash
-sudo apt-get install python3-picamera python3-rpi.gpio ffmpeg
-```
+See more information on checking you have these packages installed, and how to install them on the [software](software.md) page.
 
 ### Extras
 
@@ -61,6 +51,10 @@ You'll need the worksheet for the instructions and the GPIO diagram for the butt
     - Make executable with `chmod +x render.sh`
 - (Optional) Final version of Python code [animation.py](code/animation.py)
     - Download to the home directory with `wget http://goo.gl/ZFsiyP -O animation.py --no-check-certificate`
+
+## Python 2 compatibility
+
+
 
 ## Licence
 
