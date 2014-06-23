@@ -21,7 +21,7 @@ As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need
 - python3-picamera
 - ffmpeg
 
-See more information on checking you have these packages installed, and how to install them on the [software](software.md) page.
+See more information on checking you have these packages installed, and how to install them on the [software installation](software.md) page.
 
 ### Extras
 
@@ -51,7 +51,7 @@ You'll need the worksheet for the instructions and the GPIO diagram for the butt
 
 ## Python 2 compatibility
 
-
+This worksheet works fine in both Python 2 and Python 3. Python 3 is recommended but if you require Python 2 for an extension of the worksheet, simply use the equivalent Python 2 packages when installing. See the [software installation](software.md) page.
 
 ## Licence
 
