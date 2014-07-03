@@ -31,4 +31,4 @@ Also test you have `ffmpeg` installed by entering `avconv` at the command line. 
 The program 'avconv' is currently not installed.
 ```
 
-Then make sure you enter the `ffmpeg` package properly by checking the command above.
+then make sure you enter the `ffmpeg` package properly by checking the command above.
