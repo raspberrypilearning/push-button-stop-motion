@@ -40,7 +40,7 @@ See more information on checking you have these packages installed, and how to i
 
 ## Worksheet & included files
 
-You'll need the worksheet for the instructions and the GPIO diagram for the button setup. You will also need to download the video rendering Bash script and the final version of the Python code. Optionally, you could use a copy of the code to save typing it out.
+You'll need the worksheet for the instructions and the GPIO diagram for the button setup. Optionally, you can download the final version of the code to save typing it out.
 
 - [The worksheet](worksheet.md)
 - [GPIO diagram](images/picamera-gpio-setup.png)
