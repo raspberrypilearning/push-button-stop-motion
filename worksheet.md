@@ -77,19 +77,19 @@ Before booting your Pi, you'll need to connect the camera.
 
     ![](images/picamera-gpio-setup.png)
 
-1. Import the `RPi.GPIO` module at the top of the code, set up GPIO pin 17, and change the `sleep` line to use `GPIO.wait_for_edge` like so:
+1. Import the `RPi.GPIO` module at the top of the code, set up GPIO pin 11, and change the `sleep` line to use `GPIO.wait_for_edge` like so:
 
     ```python
     import picamera
     from time import sleep
     import RPi.GPIO as GPIO
 
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(17, GPIO.IN, GPIO.PUD_UP)
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(11, GPIO.IN, GPIO.PUD_UP)
 
     with picamera.PiCamera() as camera:
         camera.start_preview()
-        GPIO.wait_for_edge(17, GPIO.FALLING)
+        GPIO.wait_for_edge(11, GPIO.FALLING)
         camera.capture('/home/pi/image3.jpg')
         camera.stop_preview()
     ```
@@ -107,12 +107,12 @@ Before booting your Pi, you'll need to connect the camera.
     from time import sleep
     import RPi.GPIO as GPIO
 
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(17, GPIO.IN, GPIO.PUD_UP)
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(11, GPIO.IN, GPIO.PUD_UP)
 
     with picamera.PiCamera() as camera:
         camera.start_preview()
-        GPIO.wait_for_edge(17, GPIO.FALLING)
+        GPIO.wait_for_edge(11, GPIO.FALLING)
         sleep(5)
         camera.capture('/home/pi/image4.jpg')
         camera.stop_preview()
@@ -131,14 +131,14 @@ Before booting your Pi, you'll need to connect the camera.
     import picamera
     import RPi.GPIO as GPIO
 
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(17, GPIO.IN, GPIO.PUD_UP)
+    GPIO.setmode(GPIO.BOARD)
+    GPIO.setup(11, GPIO.IN, GPIO.PUD_UP)
 
     with picamera.PiCamera() as camera:
         camera.start_preview()
         frame = 1
         while True:
-            GPIO.wait_for_edge(17, GPIO.FALLING)
+            GPIO.wait_for_edge(11, GPIO.FALLING)
             camera.capture('/home/pi/animation/frame%03d.jpg' % frame)
             frame += 1
         camera.stop_preview()
