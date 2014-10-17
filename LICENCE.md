@@ -7,3 +7,5 @@ Unless otherwise specified, everything in this repository is covered by the foll
 ***Push Button Stop Motion*** by [Dave Jones](https://github.com/waveform80) and the [Raspberry Pi Foundation](http://www.raspberrypi.org) is licenced under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 Based on a work at https://github.com/raspberrypilearning/push-button-stop-motion
+
+GPIO diagrams provided under CC BY SA from [Fritzing](http://fritzing.org/home/).
