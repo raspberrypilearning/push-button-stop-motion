@@ -29,15 +29,6 @@ See more information on checking you have these packages installed, and how to i
     - Can be home-made (e.g. cardboard and/or Blu-Tack)
     - Can be bought (e.g. from [Pimoroni](http://shop.pimoroni.com/products/raspberry-pi-camera-mount) or [ModMyPi](https://www.modmypi.com/flexible-camera-mount))
 
-## Steps
-
-1. Test the camera
-1. Take a picture with Python
-1. Connect a hardware button
-1. Take a selfie
-1. Stop motion animation
-1. Render the video
-
 ## Worksheet & included files
 
 You'll need the worksheet for the instructions and the GPIO diagram for the button setup. Optionally, you can download the final version of the code to save typing it out.
@@ -59,8 +50,8 @@ This worksheet works fine in both Python 2 and Python 3. Python 3 is recommended
 
 Unless otherwise specified, everything in this repository is covered by the following licence:
 
-[![Creative Commons License](http://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
+[![Creative Commons Licence](http://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-***Push Button Stop Motion*** by [Dave Jones](https://github.com/waveform80) and the [Raspberry Pi Foundation](http://www.raspberrypi.org) is licenced under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+***Push Button Stop Motion*** by [Dave Jones](https://github.com/waveform80) and the [Raspberry Pi Foundation](http://www.raspberrypi.org) is licensed under a [Creative Commons Attribution 4.0 International Licence](http://creativecommons.org/licenses/by-sa/4.0/).
 
 Based on a work at https://github.com/raspberrypilearning/push-button-stop-motion
