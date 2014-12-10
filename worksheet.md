@@ -156,7 +156,7 @@ Before booting your Pi, you'll need to connect the camera.
 1. Run the video rendering command:
 
     ```bash
-    avconv -r 10 -i animation/frame%03d.jpg -vcodec libx264 animation.mp4
+    avconv -r 10 -qscale 2 -i animation/%03d.jpg animation.mp4
     ```
 
 1. With 10 frames this will take about 5 minutes. Once complete, you can play the video with the following command:
