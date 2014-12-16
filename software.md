@@ -1,6 +1,8 @@
 # Software installation
 
 You'll need to make sure you have the following packages installed to proceed with the workshop.
+- python3-picamera
+- ffmpeg
 
 You'll need to be online to install packages.
 
