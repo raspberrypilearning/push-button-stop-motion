@@ -8,4 +8,3 @@ Unless otherwise specified, everything in this repository is covered by the foll
 
 Based on a work at https://github.com/raspberrypilearning/push-button-stop-motion
 
-GPIO diagrams provided under CC BY SA from [Fritzing](http://fritzing.org/home/).

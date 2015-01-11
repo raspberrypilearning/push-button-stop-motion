@@ -4,7 +4,7 @@ Make your own stop motion animation rig with a push button, using Python Picamer
 
 You can use LEGO to animate a tower being built, figures acting out a scene, or anything else you can think of!
 
-## Step 1: Test the camera
+## Test the camera
 
 Before booting your Pi, you'll need to connect the camera.
 
@@ -27,7 +27,7 @@ Before booting your Pi, you'll need to connect the camera.
 1. Once the desktop icons appear, the graphical interface has loaded. Click the file manager icon in the taskbar and you should see some folders and files.
 1. Double-click `image1.jpg` to preview it.
 
-## Step 2: Take a picture with Python
+## Take a picture with Python
 
 1. Double-click on `LXTerminal` to open a terminal window, and enter `sudo idle3 &` to start the Python environment.
 1. Select `File > New Window` from the menu to open a Python file editor.
@@ -98,7 +98,7 @@ Before booting your Pi, you'll need to connect the camera.
 1. Once the preview has started, press the button connected to your Pi to capture an image.
 1. Return to the file manager window and you should see your `image3.jpg`. Again, double-click to view.
 
-## Step 4: Take a selfie
+## Take a selfie
 
 1. Modify your program to include a delay after the button wait, as follows:
 
@@ -122,7 +122,7 @@ Before booting your Pi, you'll need to connect the camera.
 1. Press the button and try to take a selfie. Be sure to keep the camera still! Ideally, it should be mounted in position.
 1. Again, feel free to check the image in the file manager. Run the program again to take another selfie!
 
-## Step 5: Stop motion animation
+## Stop motion animation
 
 1. **IMPORTANT:** Create a new folder to store your stills. In the terminal window, enter `mkdir animation`.
 1. Modify your code to add a loop to keep taking pictures every time the button is pressed:
@@ -150,7 +150,7 @@ Before booting your Pi, you'll need to connect the camera.
 1. Once all the frames have been captured, press `Ctrl + C` which will terminate the program.
 1. Open the `animation` folder in the file manager to see your stills collection.
 
-## Step 6: Render the video
+## Render the video
 
 1. Now return to the terminal window.
 1. Run the video rendering command:
