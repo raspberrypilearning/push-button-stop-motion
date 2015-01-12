@@ -1,5 +1,7 @@
 # Push button stop motion
 
+![](cover.png)
+
 Make your own stop motion animation rig with a push button, using Python Picamera and GPIO.
 
 You can use LEGO to animate a tower being built, figures acting out a scene, or anything else you can think of!
