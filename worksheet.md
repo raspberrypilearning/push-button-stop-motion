@@ -164,13 +164,13 @@ Before booting your Pi, you'll need to connect the camera.
     avconv -r 10 -qscale 2 -i animation/%03d.jpg animation.mp4
     ```
 
-1. With 10 frames this will take about 5 minutes. Once complete, you can play the video with the following command:
+    Optionally, you can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
+
+1. This will take about 2 minutes per frame. Once complete, you can play the video with the following command:
 
     ```bash
     omxplayer animation.mp4
     ```
-
-    Optionally, you can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
 
     You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, change `animation.mp4` to something else.
 
