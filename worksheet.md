@@ -4,11 +4,9 @@ Make your own stop motion animation rig with a push button, using Python Picamer
 
 You can use LEGO to animate a tower being built, figures acting out a scene, or anything else you can think of!
 
-## Test the camera
+## Connect the camera
 
 Before booting your Pi, you'll need to connect the camera.
-
-### Connecting the camera
 
 1. Locate the camera port next to the Ethernet port.
 1. Lift the tab on the top.
@@ -16,20 +14,27 @@ Before booting your Pi, you'll need to connect the camera.
 1. While holding the strip in place, push down the tab.
 1. Turn the power on to boot the Pi.
 
-### Log in and take a test picture
+    ![](images/connect-camera.png)
 
-1. Log in with username `pi` and password `raspberry`.
+## Test the camera
+
+1. Log in and boot to desktop.
+1. Open `LXTerminal` from the desktop or application menu.
+1. Enter the following command in ther terminal window:
+
+    ```bash
+    raspistill -o image1.jpg
+    ```
+
 1. Adjust the camera to point at yourself or an object.
-1. At the command prompt, enter `raspistill -o image1.jpg`.
 1. You should see a preview appear on the screen for a few seconds, and then change briefly while the image is captured. It doesn't matter if the picture is upside-down; we'll come to that later.
 1. Run the command `ls` to see the files in your home directory; you should see `image1.jpg` listed.
-1. Enter `startx` to start the graphical desktop environment.
-1. Once the desktop icons appear, the graphical interface has loaded. Click the file manager icon in the taskbar and you should see some folders and files.
+1. Click the file manager icon in the taskbar and you should see some folders and files.
 1. Double-click `image1.jpg` to preview it.
 
 ## Take a picture with Python
 
-1. Double-click on `LXTerminal` to open a terminal window, and enter `sudo idle3 &` to start the Python environment.
+1. Return to the `LXTerminal` window, and enter `sudo idle3 &` to start the Python environment.
 1. Select `File > New Window` from the menu to open a Python file editor.
 1. Carefully enter the following code (case is important!):
 
@@ -165,5 +170,14 @@ Before booting your Pi, you'll need to connect the camera.
     omxplayer animation.mp4
     ```
 
-1. Optionally, you can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
-1. You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, change `animation.mp4` to something else.
+    Optionally, you can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
+
+    You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, change `animation.mp4` to something else.
+
+## What next?
+
+- Why not share your video - try uploading it to YouTube!
+- Now you know how to wire up a button to take a picture with the camera module, what else can you use this for?
+- Could you do something similar for a time-lapse video?
+- What could you use instead of a button? A motion sensor?
+- Instead of making a video, what else could you do with photos taken with the camera module? You could post them to Twitter!
