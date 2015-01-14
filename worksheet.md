@@ -76,7 +76,7 @@ Before booting your Pi, you'll need to connect the camera.
 
 1. Run the file again and it will overwrite `image2.jpg` with a new image in the correct orientation. Remember to keep these lines in your code while you alter it in the next few steps.
 
-## Step 3: Connect a hardware button
+## Connect a hardware button
 
 1. Connect the Pi to the button as shown in the diagram below:
 
