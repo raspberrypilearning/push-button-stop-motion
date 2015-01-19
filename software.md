@@ -27,10 +27,4 @@ sudo python3 -c "import picamera"
 
 This should bring you back to the command prompt with no errors. If you get an error saying `No module named picamera` then check you entered the commands above correctly.
 
-Also test you have `ffmpeg` installed by entering `avconv` at the command line. You should see some information about the `avconv` tool. If you see the error
-
-```
-The program 'avconv' is currently not installed.
-```
-
-then make sure you enter the `ffmpeg` package properly by checking the command above.
+Also test you have `ffmpeg` installed by entering `avconv` at the command line. You should see some information about the `avconv` tool. If you see the error `The program 'avconv' is currently not installed.` then check you entered the commands above correctly.
