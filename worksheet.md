@@ -14,7 +14,7 @@ Before booting your Pi, you'll need to connect the camera.
 1. While holding the strip in place, push down the tab.
 1. Turn the power on to boot the Pi.
 
-    ![](images/connect-camera.png)
+    ![](images/connect-camera.jpg)
 
 ## Test the camera
 
