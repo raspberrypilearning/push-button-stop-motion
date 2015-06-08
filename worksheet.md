@@ -35,6 +35,7 @@ Click the file manager icon in the taskbar and you should see some folders and f
 ## Take a picture with Python
 
 Return to the `LXTerminal` window, and enter `sudo idle3 &` to start the Python environment.
+
 1. Select `File > New Window` from the menu to open a Python file editor.
 1. Carefully enter the following code (case is important!):
 
