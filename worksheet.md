@@ -18,8 +18,7 @@ Before booting your Pi, you'll need to connect the camera.
 
 ## Test the camera
 
-Log in and boot to desktop.
-
+1. Log in and boot to desktop.
 1. Open `LXTerminal` from the desktop or application menu. Enter the following command in the terminal window:
 
     ```bash
@@ -27,15 +26,12 @@ Log in and boot to desktop.
     ```
 
 1. Adjust the camera to point at yourself or an object. You should see a preview appear on the screen for a few seconds, and then this should change briefly while the image is captured. It doesn't matter if the picture is upside-down; we'll come to that later.
-
 1. Run the command `ls` to see the files in your home directory; you should see `image1.jpg` listed.
-
 1. Click the file manager icon in the taskbar and you should see some folders and files. Double-click `image1.jpg` to preview it.
 
 ## Take a picture with Python
 
-Return to the `LXTerminal` window, and enter `sudo idle3 &` to start the Python environment.
-
+1. Return to the `LXTerminal` window, and enter `sudo idle3 &` to start the Python environment.
 1. Select `File > New Window` from the menu to open a Python file editor.
 1. Carefully enter the following code (case is important!):
 
