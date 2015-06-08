@@ -134,7 +134,7 @@ If you want to take a photograph of yourself with the camera board, you are goin
 
 Now that you have successfully taken individual photographs with your camera, it's time to try combining a series of still images to make a stop motion animation. 
 
-1. **NOTE:** You must create a new folder to store your stills. In the terminal window, enter `mkdir animation`.
+1. **IMPORTANT** You must create a new folder to store your stills. In the terminal window, enter `mkdir animation`.
 1. Modify your code to add a loop to keep taking pictures every time the button is pressed:
 
     ```python
