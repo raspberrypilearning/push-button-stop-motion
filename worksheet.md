@@ -75,7 +75,7 @@ Before booting your Pi, you'll need to connect the camera.
 
 ## Connect a hardware button
 
-Connect the Pi to the button as shown in the diagram below:
+Using your breadboard and jumper leads, connect the Pi to the button as shown in the diagram below:
 
 ![](images/picamera-gpio-setup.png)
 
