@@ -81,7 +81,7 @@ Return to the `LXTerminal` window, and enter `sudo idle3 &` to start the Python 
 
 Connect the Pi to the button as shown in the diagram below:
 
-    ![](images/picamera-gpio-setup.png)
+![](images/picamera-gpio-setup.png)
 
 1. Import the `RPi.GPIO` module at the top of the code, set up GPIO pin 17, and change the `sleep` line to use `GPIO.wait_for_edge` like so:
 
@@ -169,15 +169,15 @@ Now that you have successfully taken individual photographs with your camera, it
     avconv -r 10 -qscale 2 -i animation/%03d.jpg animation.mp4
     ```
 
-You can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
+1. You can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
 
-1. This will take about 2 minutes per frame. Once complete, you can play the video with the following command:
+1. Rendering the animation will take about 2 minutes per frame. Once complete, you can play the video with the following command:
 
     ```bash
     omxplayer animation.mp4
     ```
 
-You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, change `animation.mp4` to something else.
+1. You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, change `animation.mp4` to something else.
 
 ## What next?
 
