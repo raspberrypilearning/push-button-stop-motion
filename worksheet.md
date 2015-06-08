@@ -79,7 +79,7 @@ Return to the `LXTerminal` window, and enter `sudo idle3 &` to start the Python 
 
 ## Connect a hardware button
 
-1. Connect the Pi to the button as shown in the diagram below:
+Connect the Pi to the button as shown in the diagram below:
 
     ![](images/picamera-gpio-setup.png)
 
@@ -106,7 +106,9 @@ Return to the `LXTerminal` window, and enter `sudo idle3 &` to start the Python 
 
 ## Take a selfie
 
-1. Modify your program to include a delay after the button wait, as follows:
+If you want to take a photograph of yourself with the camera board, you are going to have to add in a delay, to enable you to get into position. You can do this by modifying your program. 
+
+1. Add a line to your code to tell the program to sleep briefly before capturing an image, as below:
 
     ```python
     import picamera
@@ -126,7 +128,7 @@ Return to the `LXTerminal` window, and enter `sudo idle3 &` to start the Python 
 
 1. Save and run your script.
 1. Press the button and try to take a selfie. Be sure to keep the camera still! Ideally, it should be mounted in position.
-1. Again, feel free to check the image in the file manager. Run the program again to take another selfie!
+1. Again, feel free to check the image in the file manager. Run the program again to take another selfie.
 
 ## Stop motion animation
 
@@ -177,8 +179,8 @@ Return to the `LXTerminal` window, and enter `sudo idle3 &` to start the Python 
 
 ## What next?
 
-- Why not share your video - try uploading it to YouTube!
-- Now you know how to wire up a button to take a picture with the camera module, what else can you use this for?
+- Why not share your video? Try uploading it to YouTube!
+- Now you know how to wire up a button to take a picture with the camera module, what else could you use this for?
 - Could you do something similar for a time-lapse video?
 - What could you use instead of a button? A motion sensor?
-- Instead of making a video, what else could you do with photos taken with the camera module? You could post them to Twitter!
+- Instead of making a video, what else could you do with photos taken with the camera module? You could post them to Twitter, or another social media site. 
