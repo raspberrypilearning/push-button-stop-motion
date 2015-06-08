@@ -158,7 +158,7 @@ Now that you have successfully taken individual photographs with your camera, it
 
 ## Render the video
 
-1. Now return to the terminal window.
+1. To render the video, begin by returning to the terminal window.
 1. Run the video rendering command:
 
     ```bash
