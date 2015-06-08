@@ -20,17 +20,17 @@ Before booting your Pi, you'll need to connect the camera.
 
 Log in and boot to desktop.
 
-Open `LXTerminal` from the desktop or application menu. Enter the following command in ther terminal window:
+1. Open `LXTerminal` from the desktop or application menu. Enter the following command in the terminal window:
 
     ```bash
     raspistill -o image1.jpg
     ```
 
-Adjust the camera to point at yourself or an object. You should see a preview appear on the screen for a few seconds, and then this should change briefly while the image is captured. It doesn't matter if the picture is upside-down; we'll come to that later.
+1. Adjust the camera to point at yourself or an object. You should see a preview appear on the screen for a few seconds, and then this should change briefly while the image is captured. It doesn't matter if the picture is upside-down; we'll come to that later.
 
-Run the command `ls` to see the files in your home directory; you should see `image1.jpg` listed.
+1. Run the command `ls` to see the files in your home directory; you should see `image1.jpg` listed.
 
-Click the file manager icon in the taskbar and you should see some folders and files. Double-click `image1.jpg` to preview it.
+1. Click the file manager icon in the taskbar and you should see some folders and files. Double-click `image1.jpg` to preview it.
 
 ## Take a picture with Python
 
