@@ -53,7 +53,7 @@ Return to the `LXTerminal` window, and enter `sudo idle3 &` to start the Python 
 1. Select `File > Save` from the menu (or press `Ctrl + S`) and save as `animation.py`.
 1. Press `F5` to run the script.
 1. Without closing the Python window, return to the file manager window and you'll see the new file `image2.jpg`. Double-click to view the picture. 
-If the picture is upside-down you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following lines:
+1. If the picture is upside-down you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following lines:
 
     ```python
     camera.vflip = True
@@ -75,7 +75,7 @@ If the picture is upside-down you can either reposition your camera using a moun
         camera.stop_preview()
     ```
 
-Run the file again and it will overwrite `image2.jpg` with a new image in the correct orientation. Remember to keep these lines in your code while you alter it in the next few steps.
+1. Run the file again and it will overwrite `image2.jpg` with a new image in the correct orientation. Remember to keep these lines in your code while you alter it in the next few steps.
 
 ## Connect a hardware button
 
