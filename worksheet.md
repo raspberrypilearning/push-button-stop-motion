@@ -34,7 +34,7 @@ Click the file manager icon in the taskbar and you should see some folders and f
 
 ## Take a picture with Python
 
-1. Return to the `LXTerminal` window, and enter `sudo idle3 &` to start the Python environment.
+Return to the `LXTerminal` window, and enter `sudo idle3 &` to start the Python environment.
 1. Select `File > New Window` from the menu to open a Python file editor.
 1. Carefully enter the following code (case is important!):
 
@@ -51,8 +51,8 @@ Click the file manager icon in the taskbar and you should see some folders and f
 
 1. Select `File > Save` from the menu (or press `Ctrl + S`) and save as `animation.py`.
 1. Press `F5` to run the script.
-1. Without closing the Python window, return to the file manager window and you'll see the new file `image2.jpg`. Double-click to view the picture.
-1. If the picture is upside-down you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following lines:
+1. Without closing the Python window, return to the file manager window and you'll see the new file `image2.jpg`. Double-click to view the picture. 
+If the picture is upside-down you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following lines:
 
     ```python
     camera.vflip = True
@@ -74,7 +74,7 @@ Click the file manager icon in the taskbar and you should see some folders and f
         camera.stop_preview()
     ```
 
-1. Run the file again and it will overwrite `image2.jpg` with a new image in the correct orientation. Remember to keep these lines in your code while you alter it in the next few steps.
+Run the file again and it will overwrite `image2.jpg` with a new image in the correct orientation. Remember to keep these lines in your code while you alter it in the next few steps.
 
 ## Connect a hardware button
 
