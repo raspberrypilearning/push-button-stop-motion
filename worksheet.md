@@ -128,11 +128,13 @@ If you want to take a photograph of yourself with the camera board, you are goin
 
 1. Save and run your script.
 1. Press the button and try to take a selfie. Be sure to keep the camera still! Ideally, it should be mounted in position.
-1. Again, feel free to check the image in the file manager. Run the program again to take another selfie.
+1. Again, feel free to check the image in the file manager. You can run the program again to take another selfie.
 
 ## Stop motion animation
 
-1. **IMPORTANT:** Create a new folder to store your stills. In the terminal window, enter `mkdir animation`.
+Now that you have successfully taken individual photographs with your camera, it's time to try combining a series of still images to make a stop motion animation. 
+
+1. **NOTE:** You must create a new folder to store your stills. In the terminal window, enter `mkdir animation`.
 1. Modify your code to add a loop to keep taking pictures every time the button is pressed:
 
     ```python
@@ -153,7 +155,7 @@ If you want to take a photograph of yourself with the camera board, you are goin
     ```
 
 1. Now set up your animation subject (e.g. LEGO), ready to start the stop motion animation.
-1. **IMPORTANT** This time, do not run the program from IDLE as it will be impossible to break out of the loop. Instead, return to the terminal window and enter `sudo python3 animation.py`.
+1. **IMPORTANT** This time, do **not** run the program from IDLE as it will be impossible to break out of the loop. Instead, return to the terminal window and enter `sudo python3 animation.py`.
 1. Press the button to capture the first frame, then rearrange the animation subject and press the button again to capture each subsequent frame.
 1. Once all the frames have been captured, press `Ctrl + C` which will terminate the program.
 1. Open the `animation` folder in the file manager to see your stills collection.
@@ -167,7 +169,7 @@ If you want to take a photograph of yourself with the camera board, you are goin
     avconv -r 10 -qscale 2 -i animation/%03d.jpg animation.mp4
     ```
 
-    Optionally, you can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
+You can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
 
 1. This will take about 2 minutes per frame. Once complete, you can play the video with the following command:
 
@@ -175,7 +177,7 @@ If you want to take a photograph of yourself with the camera board, you are goin
     omxplayer animation.mp4
     ```
 
-    You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, change `animation.mp4` to something else.
+You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, change `animation.mp4` to something else.
 
 ## What next?
 
