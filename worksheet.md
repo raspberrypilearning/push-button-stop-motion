@@ -106,7 +106,7 @@ Connect the Pi to the button as shown in the diagram below:
 
 ## Take a selfie
 
-If you want to take a photograph of yourself with the camera board, you are going to have to add in a delay, to enable you to get into position. You can do this by modifying your program. 
+If you want to take a photograph of yourself with the camera board, you are going to have to add in a delay to enable you to get into position. You can do this by modifying your program. 
 
 1. Add a line to your code to tell the program to sleep briefly before capturing an image, as below:
 
