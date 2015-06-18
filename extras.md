@@ -1,4 +1,4 @@
 You'll also need:
 
-- Animation subject (e.g. LEGO)
-- Camera mount (home-made or purchased)
+- An animation subject (e.g. LEGO)
+- A camera mount (home-made or [purchased](http://www.modmypi.com/raspberry-pi/camera/camera-board-360-gooseneck-mount))
