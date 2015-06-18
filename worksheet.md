@@ -18,8 +18,7 @@ Before booting your Pi, you'll need to connect the camera.
 
 ## Test the camera
 
-1. Log in and boot to desktop.
-1. Open `LXTerminal` from the desktop or application menu. Enter the following command in the terminal window:
+1. Open a Terminal window from the desktop or application menu. Enter the following command:
 
     ```bash
     raspistill -o image1.jpg
@@ -31,9 +30,9 @@ Before booting your Pi, you'll need to connect the camera.
 
 ## Take a picture with Python
 
-1. Return to the `LXTerminal` window, and enter `sudo idle3 &` to start the Python environment.
+1. Return to the `LXTerminal` window, and enter `sudo idle3 &` to open the Python editor.
 1. Select `File > New Window` from the menu to open a Python file editor.
-1. Carefully enter the following code (case is important!):
+1. Carefully enter the following code into the new window (case is important!):
 
     ```python
     import picamera
@@ -41,14 +40,14 @@ Before booting your Pi, you'll need to connect the camera.
 
     with picamera.PiCamera() as camera:
         camera.start_preview()
-        sleep(5)
+        sleep(3)
         camera.capture('/home/pi/image2.jpg')
         camera.stop_preview()
     ```
 
 1. Select `File > Save` from the menu (or press `Ctrl + S`) and save as `animation.py`.
 1. Press `F5` to run the script.
-1. Without closing the Python window, return to the file manager window and you'll see the new file `image2.jpg`. Double-click to view the picture. 
+1. Without closing the Python window, return to the file manager window and you'll see the new file `image2.jpg`. Double-click to view the picture.
 1. If the picture is upside-down you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following lines:
 
     ```python
@@ -56,7 +55,7 @@ Before booting your Pi, you'll need to connect the camera.
     camera.hflip = True
     ```
 
-    inside the `with` loop, so it becomes:
+    inside the `with` block, so it becomes:
 
     ```python
     import picamera
@@ -66,7 +65,7 @@ Before booting your Pi, you'll need to connect the camera.
         camera.vflip = True
         camera.hflip = True
         camera.start_preview()
-        sleep(5)
+        sleep(3)
         camera.capture('/home/pi/image2.jpg')
         camera.stop_preview()
     ```
@@ -79,19 +78,21 @@ Before booting your Pi, you'll need to connect the camera.
 
     ![](images/picamera-gpio-setup.png)
 
-1. Import the `RPi.GPIO` module at the top of the code, set up GPIO pin 17, and change the `sleep` line to use `GPIO.wait_for_edge` like so:
+1. Import the GPIO module at the top of the code, set up GPIO pin 17, and change the `sleep` line to use `GPIO.wait_for_edge` like so:
 
     ```python
     import picamera
     from time import sleep
-    import RPi.GPIO as GPIO
+    from RPi import GPIO
+
+    button = 17
 
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(17, GPIO.IN, GPIO.PUD_UP)
+    GPIO.setup(button, GPIO.IN, GPIO.PUD_UP)
 
     with picamera.PiCamera() as camera:
         camera.start_preview()
-        GPIO.wait_for_edge(17, GPIO.FALLING)
+        GPIO.wait_for_edge(button, GPIO.FALLING)
         camera.capture('/home/pi/image3.jpg')
         camera.stop_preview()
     ```
@@ -102,22 +103,24 @@ Before booting your Pi, you'll need to connect the camera.
 
 ## Take a selfie
 
-If you want to take a photograph of yourself with the camera board, you are going to have to add in a delay to enable you to get into position. You can do this by modifying your program. 
+If you want to take a photograph of yourself with the camera board, you are going to have to add in a delay to enable you to get into position. You can do this by modifying your program.
 
 1. Add a line to your code to tell the program to sleep briefly before capturing an image, as below:
 
     ```python
     import picamera
     from time import sleep
-    import RPi.GPIO as GPIO
+    from RPi import GPIO
+
+    button = 17
 
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(17, GPIO.IN, GPIO.PUD_UP)
+    GPIO.setup(button, GPIO.IN, GPIO.PUD_UP)
 
     with picamera.PiCamera() as camera:
         camera.start_preview()
-        GPIO.wait_for_edge(17, GPIO.FALLING)
-        sleep(5)
+        GPIO.wait_for_edge(button, GPIO.FALLING)
+        sleep(3)
         camera.capture('/home/pi/image4.jpg')
         camera.stop_preview()
     ```
@@ -128,23 +131,25 @@ If you want to take a photograph of yourself with the camera board, you are goin
 
 ## Stop motion animation
 
-Now that you have successfully taken individual photographs with your camera, it's time to try combining a series of still images to make a stop motion animation. 
+Now that you have successfully taken individual photographs with your camera, it's time to try combining a series of still images to make a stop motion animation.
 
 1. **IMPORTANT** You must create a new folder to store your stills. In the terminal window, enter `mkdir animation`.
 1. Modify your code to add a loop to keep taking pictures every time the button is pressed:
 
     ```python
     import picamera
-    import RPi.GPIO as GPIO
+    from RPi import GPIO
+
+    button = 17
 
     GPIO.setmode(GPIO.BCM)
-    GPIO.setup(17, GPIO.IN, GPIO.PUD_UP)
+    GPIO.setup(button, GPIO.IN, GPIO.PUD_UP)
 
     with picamera.PiCamera() as camera:
         camera.start_preview()
         frame = 1
         while True:
-            GPIO.wait_for_edge(17, GPIO.FALLING)
+            GPIO.wait_for_edge(button, GPIO.FALLING)
             camera.capture('/home/pi/animation/frame%03d.jpg' % frame)
             frame += 1
         camera.stop_preview()
@@ -159,6 +164,7 @@ Now that you have successfully taken individual photographs with your camera, it
 ## Render the video
 
 1. To render the video, begin by returning to the terminal window.
+
 1. Run the video rendering command:
 
     ```bash
@@ -181,4 +187,4 @@ Now that you have successfully taken individual photographs with your camera, it
 - Now you know how to wire up a button to take a picture with the camera module, what else could you use this for?
 - Could you do something similar for a time-lapse video?
 - What could you use instead of a button? A motion sensor?
-- Instead of making a video, what else could you do with photos taken with the camera module? You could post them to Twitter, or another social media site. 
+- Instead of making a video, what else could you do with photos taken with the camera module? You could post them to Twitter, or another social media site.
