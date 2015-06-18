@@ -30,7 +30,7 @@ Before booting your Pi, you'll need to connect the camera.
 
 ## Take a picture with Python
 
-1. Return to the `LXTerminal` window, and enter `sudo idle3 &` to open the Python editor.
+1. Return to the Terminal window, and enter `sudo idle3 &` to open the Python editor.
 1. Select `File > New Window` from the menu to open a Python file editor.
 1. Carefully enter the following code into the new window (case is important!):
 
