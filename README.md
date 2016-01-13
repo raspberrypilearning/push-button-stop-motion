@@ -1,6 +1,6 @@
-# Push button stop motion
+# Push Button Stop Motion
 
-![](cover.png)
+![Push Button Stop Motion](cover.png)
 
 Make your own stop motion animation rig with a push button, using Python Picamera and GPIO.
 
@@ -13,14 +13,14 @@ As well as a Raspberry Pi with an SD card loaded with Raspbian, you'll also need
 ### Hardware
 
 - 1 x [Raspberry Pi camera module](http://www.raspberrypi.org/product/camera-module/)
-- 1 x Solderless breadboard (e.g. from [Pimoroni](http://shop.pimoroni.com/products/colourful-mini-breadboard))
+- 1 x Breadboard (e.g. from [Pimoroni](http://shop.pimoroni.com/products/colourful-mini-breadboard))
 - 2 x Male-to-female jumper leads (e.g. from [Pimoroni](http://shop.pimoroni.com/products/jumper-jerky))
 - 1 x Tactile button (e.g. from [RS Components](http://uk.rs-online.com/web/p/tactile-switches/7182443/))
 
 ### Software
 
-- python3-picamera
-- ffmpeg
+- GPIO Zero for Python 3
+- libav-tools
 
 See more information on checking you have these packages installed, and how to install them on the [software installation](software.md) page.
 
@@ -39,14 +39,6 @@ You'll need the worksheet for the instructions and the GPIO diagram for the butt
 - [GPIO diagram](images/picamera-gpio-setup.png)
 - (Optional) Final version of Python code [animation.py](code/animation.py)
     - Download to the home directory with `wget http://goo.gl/ZFsiyP -O animation.py --no-check-certificate`
-
-## Rendering options
-
-The rendering process is intensive and with many frames can take a long time on the Pi. You may wish to render the video on another computer using general video editing software such as Movie Maker on Windows, iMovie on Mac or `mencoder` on Linux.
-
-## Python 2 compatibility
-
-This worksheet works fine in both Python 2 and Python 3. Python 3 is recommended but if you require Python 2 for an extension of the worksheet, simply use the equivalent Python 2 packages when installing. See the [software installation](software.md) page.
 
 ## Licence
 

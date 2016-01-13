@@ -1,6 +1,6 @@
 # Push Button Stop Motion
 
-Make your own stop motion animation rig with a push button, using Python PiCamera and GPIO.
+Make your own stop motion animation video with a push button controller, using Python and GPIO.
 
 You can use LEGO to animate a tower being built, figures acting out a scene, or anything else you can think of!
 
@@ -14,7 +14,7 @@ Before booting your Pi, you'll need to connect the camera.
 
 1. Turn the power on to boot the Pi.
 
-![](images/connect-camera.jpg)
+![Connect the camera](images/connect-camera.jpg)
 
 ## Test the camera
 
@@ -25,20 +25,26 @@ Before booting your Pi, you'll need to connect the camera.
     ```
 
 1. Adjust the camera to point at yourself or an object. You should see a preview appear on the screen for a few seconds, and then this should change briefly while the image is captured. It doesn't matter if the picture is upside-down; we'll come to that later.
+
 1. Run the command `ls` to see the files in your home directory; you should see `image1.jpg` listed.
+
 1. Click the file manager icon in the taskbar and you should see some folders and files. Double-click `image1.jpg` to preview it.
 
 ## Take a picture with Python
 
-1. Return to the Terminal window, and enter `sudo idle3 &` to open the Python editor.
+1. Open Python 3 (IDLE) from the main menu:
+
+    ![Open Python 3](images/python3-app-menu.png)
+
 1. Select `File > New Window` from the menu to open a Python file editor.
+
 1. Carefully enter the following code into the new window (case is important!):
 
     ```python
-    import picamera
+    from picamera import PiCamera
     from time import sleep
 
-    with picamera.PiCamera() as camera:
+    with PiCamera() as camera:
         camera.start_preview()
         sleep(3)
         camera.capture('/home/pi/image2.jpg')
@@ -46,13 +52,15 @@ Before booting your Pi, you'll need to connect the camera.
     ```
 
 1. Select `File > Save` from the menu (or press `Ctrl + S`) and save as `animation.py`.
+
 1. Press `F5` to run the script.
+
 1. Without closing the Python window, return to the file manager window and you'll see the new file `image2.jpg`. Double-click to view the picture.
+
 1. If the picture is upside-down you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following lines:
 
     ```python
-    camera.vflip = True
-    camera.hflip = True
+    camera.rotation = 180
     ```
 
     inside the `with` block, so it becomes:
@@ -62,8 +70,7 @@ Before booting your Pi, you'll need to connect the camera.
     from time import sleep
 
     with picamera.PiCamera() as camera:
-        camera.vflip = True
-        camera.hflip = True
+        camera.rotation = 180
         camera.start_preview()
         sleep(3)
         camera.capture('/home/pi/image2.jpg')
@@ -78,27 +85,26 @@ Before booting your Pi, you'll need to connect the camera.
 
     ![](images/picamera-gpio-setup.png)
 
-1. Import the GPIO module at the top of the code, set up GPIO pin 17, and change the `sleep` line to use `GPIO.wait_for_edge` like so:
+1. Import `Button` from the `gpiozero` module at the top of the code, create up a `Button` connected to pin 17, and change the `sleep` line to use `button.wait_for_press` like so:
 
     ```python
-    import picamera
+    from picamera import PiCamera
     from time import sleep
-    from RPi import GPIO
+    from gpiozero import Button
 
-    button = 17
+    button = Button(17)
 
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(button, GPIO.IN, GPIO.PUD_UP)
-
-    with picamera.PiCamera() as camera:
+    with PiCamera() as camera:
         camera.start_preview()
-        GPIO.wait_for_edge(button, GPIO.FALLING)
+        button.wait_for_press()
         camera.capture('/home/pi/image3.jpg')
         camera.stop_preview()
     ```
 
 1. Save and run your script.
+
 1. Once the preview has started, press the button connected to your Pi to capture an image.
+
 1. Return to the file manager window and you should see your `image3.jpg`. Again, double-click to view.
 
 ## Take a selfie
@@ -108,25 +114,18 @@ If you want to take a photograph of yourself with the camera board, you are goin
 1. Add a line to your code to tell the program to sleep briefly before capturing an image, as below:
 
     ```python
-    import picamera
-    from time import sleep
-    from RPi import GPIO
-
-    button = 17
-
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(button, GPIO.IN, GPIO.PUD_UP)
-
-    with picamera.PiCamera() as camera:
+    with PiCamera() as camera:
         camera.start_preview()
-        GPIO.wait_for_edge(button, GPIO.FALLING)
+        button.wait_for_press()
         sleep(3)
-        camera.capture('/home/pi/image4.jpg')
+        camera.capture('/home/pi/image3.jpg')
         camera.stop_preview()
     ```
 
 1. Save and run your script.
+
 1. Press the button and try to take a selfie. Be sure to keep the camera still! Ideally, it should be mounted in position.
+
 1. Again, feel free to check the image in the file manager. You can run the program again to take another selfie.
 
 ## Stop motion animation
@@ -134,36 +133,36 @@ If you want to take a photograph of yourself with the camera board, you are goin
 Now that you have successfully taken individual photographs with your camera, it's time to try combining a series of still images to make a stop motion animation.
 
 1. **IMPORTANT** You must create a new folder to store your stills. In the terminal window, enter `mkdir animation`.
+
 1. Modify your code to add a loop to keep taking pictures every time the button is pressed:
 
     ```python
-    import picamera
-    from RPi import GPIO
-
-    button = 17
-
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(button, GPIO.IN, GPIO.PUD_UP)
-
-    with picamera.PiCamera() as camera:
+    with PiCamera() as camera:
         camera.start_preview()
         frame = 1
-        while True:
-            GPIO.wait_for_edge(button, GPIO.FALLING)
+        try:
+            button.wait_for_press()
             camera.capture('/home/pi/animation/frame%03d.jpg' % frame)
             frame += 1
-        camera.stop_preview()
+        except KeyboardInterrupt:
+            camera.stop_preview()
     ```
 
+    *Because `while True` goes on forever, you have to be able to make it exit gracefully. Using `try` and `except` means it can deal with an exceptional circumstance - if you force it to stop with `Ctrl + C` and it will close the camera preview*
+
+    *`frame%03d` means the file will be saved as the name "frame" followed by a 3-digit numberm with leading zeroes - 001, 002, 003, etc. This allows them to be easily sorted into the correct order for the video.*
+
 1. Now set up your animation subject (e.g. LEGO), ready to start the stop motion animation.
-1. **IMPORTANT** This time, do **not** run the program from IDLE as it will be impossible to break out of the loop. Instead, return to the terminal window and enter `sudo python3 animation.py`.
+
 1. Press the button to capture the first frame, then rearrange the animation subject and press the button again to capture each subsequent frame.
+
 1. Once all the frames have been captured, press `Ctrl + C` which will terminate the program.
+
 1. Open the `animation` folder in the file manager to see your stills collection.
 
-## Render the video
+## Generate the video
 
-1. To render the video, begin by returning to the terminal window.
+1. To generate the video, begin by returning to the terminal window.
 
 1. Run the video rendering command:
 
@@ -171,9 +170,9 @@ Now that you have successfully taken individual photographs with your camera, it
     avconv -r 10 -qscale 2 -i animation/%03d.jpg animation.mp4
     ```
 
-1. You can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
+    *Note you're using `%03d` again - this is a common format which both Python and `avconv` understand, and means the photos will be passed in to the video in order.*
 
-1. Rendering the animation will take about 2 minutes per frame. Once complete, you can play the video with the following command:
+1. You can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
 
     ```bash
     omxplayer animation.mp4

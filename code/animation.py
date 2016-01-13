@@ -1,14 +1,16 @@
-import picamera
-import RPi.GPIO as GPIO
+from picamera import PiCamera
+from time import sleep
+from gpiozero import Button
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(17, GPIO.IN, GPIO.PUD_UP)
+button = Button(17)
 
-with picamera.PiCamera() as camera:
+with PiCamera() as camera:
     camera.start_preview()
     frame = 1
     while True:
-        GPIO.wait_for_edge(17, GPIO.FALLING)
-        camera.capture('/home/pi/animation/frame%03d.jpg' % frame)
-        frame += 1
-    camera.stop_preview()
+        try:
+            button.wait_for_press()
+            camera.capture('/home/pi/animation/frame%03d.jpg' % frame)
+            frame += 1
+        except KeyboardInterrupt:
+            camera.stop_preview()
