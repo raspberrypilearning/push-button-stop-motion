@@ -140,15 +140,17 @@ Now that you have successfully taken individual photographs with your camera, it
     with PiCamera() as camera:
         camera.start_preview()
         frame = 1
-        try:
-            button.wait_for_press()
-            camera.capture('/home/pi/animation/frame%03d.jpg' % frame)
-            frame += 1
-        except KeyboardInterrupt:
-            camera.stop_preview()
+        while True:
+            try:
+                button.wait_for_press()
+                camera.capture('/home/pi/animation/frame%03d.jpg' % frame)
+                frame += 1
+            except KeyboardInterrupt:
+                camera.stop_preview()
+                break
     ```
 
-    *Because `while True` goes on forever, you have to be able to make it exit gracefully. Using `try` and `except` means it can deal with an exceptional circumstance - if you force it to stop with `Ctrl + C` and it will close the camera preview*
+    *Because `while True` goes on forever, you have to be able to make it exit gracefully. Using `try` and `except` means it can deal with an exceptional circumstance - if you force it to stop with `Ctrl + C` it will close the camera preview and exit the loop*
 
     *`frame%03d` means the file will be saved as the name "frame" followed by a 3-digit numberm with leading zeroes - 001, 002, 003, etc. This allows them to be easily sorted into the correct order for the video.*
 
