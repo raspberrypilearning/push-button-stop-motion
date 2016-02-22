@@ -14,3 +14,4 @@ with PiCamera() as camera:
             frame += 1
         except KeyboardInterrupt:
             camera.stop_preview()
+            break
