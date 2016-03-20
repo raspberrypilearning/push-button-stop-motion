@@ -44,11 +44,12 @@ Before booting your Pi, you'll need to connect the camera.
     from picamera import PiCamera
     from time import sleep
 
-    with PiCamera() as camera:
-        camera.start_preview()
-        sleep(3)
-        camera.capture('/home/pi/image2.jpg')
-        camera.stop_preview()
+    camera = PiCamera()
+
+    camera.start_preview()
+    sleep(3)
+    camera.capture('/home/pi/image2.jpg')
+    camera.stop_preview()
     ```
 
 1. Select `File > Save` from the menu (or press `Ctrl + S`) and save as `animation.py`.
@@ -69,12 +70,13 @@ Before booting your Pi, you'll need to connect the camera.
     import picamera
     from time import sleep
 
-    with picamera.PiCamera() as camera:
-        camera.rotation = 180
-        camera.start_preview()
-        sleep(3)
-        camera.capture('/home/pi/image2.jpg')
-        camera.stop_preview()
+    camera = PiCamera()
+
+    camera.rotation = 180
+    camera.start_preview()
+    sleep(3)
+    camera.capture('/home/pi/image2.jpg')
+    camera.stop_preview()
     ```
 
 1. Run the file again and it will overwrite `image2.jpg` with a new image in the correct orientation. Remember to keep these lines in your code while you alter it in the next few steps.
@@ -93,12 +95,12 @@ Before booting your Pi, you'll need to connect the camera.
     from gpiozero import Button
 
     button = Button(17)
+    camera = PiCamera()
 
-    with PiCamera() as camera:
-        camera.start_preview()
-        button.wait_for_press()
-        camera.capture('/home/pi/image3.jpg')
-        camera.stop_preview()
+    camera.start_preview()
+    button.wait_for_press()
+    camera.capture('/home/pi/image3.jpg')
+    camera.stop_preview()
     ```
 
 1. Save and run your script.
@@ -114,12 +116,11 @@ If you want to take a photograph of yourself with the camera board, you are goin
 1. Add a line to your code to tell the program to sleep briefly before capturing an image, as below:
 
     ```python
-    with PiCamera() as camera:
-        camera.start_preview()
-        button.wait_for_press()
-        sleep(3)
-        camera.capture('/home/pi/image3.jpg')
-        camera.stop_preview()
+    camera.start_preview()
+    button.wait_for_press()
+    sleep(3)
+    camera.capture('/home/pi/image3.jpg')
+    camera.stop_preview()
     ```
 
 1. Save and run your script.
@@ -137,15 +138,14 @@ Now that you have successfully taken individual photographs with your camera, it
 1. Modify your code to add a loop to keep taking pictures every time the button is pressed:
 
     ```python
-    with PiCamera() as camera:
-        camera.start_preview()
-        frame = 1
-        try:
-            button.wait_for_press()
-            camera.capture('/home/pi/animation/frame%03d.jpg' % frame)
-            frame += 1
-        except KeyboardInterrupt:
-            camera.stop_preview()
+    camera.start_preview()
+    frame = 1
+    try:
+        button.wait_for_press()
+        camera.capture('/home/pi/animation/frame%03d.jpg' % frame)
+        frame += 1
+    except KeyboardInterrupt:
+        camera.stop_preview()
     ```
 
     *Because `while True` goes on forever, you have to be able to make it exit gracefully. Using `try` and `except` means it can deal with an exceptional circumstance - if you force it to stop with `Ctrl + C` and it will close the camera preview*
@@ -156,7 +156,7 @@ Now that you have successfully taken individual photographs with your camera, it
 
 1. Press the button to capture the first frame, then rearrange the animation subject and press the button again to capture each subsequent frame.
 
-1. Once all the frames have been captured, press `Ctrl + C` which will terminate the program.
+1. Once all the frames have been captured, press `Ctrl + C` to terminate the program.
 
 1. Open the `animation` folder in the file manager to see your stills collection.
 
