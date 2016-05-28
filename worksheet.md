@@ -1,6 +1,6 @@
 # Push Button Stop Motion
 
-Make your own stop motion animation video with a push button controller, using Python and GPIO.
+Make your own stop motion animation video with a push button controller, using Python and GPIO Zero.
 
 You can use LEGO to animate a tower being built, figures acting out a scene, or anything else you can think of!
 
@@ -18,13 +18,13 @@ Before booting your Pi, you'll need to connect the camera.
 
 ## Test the camera
 
-1. Open a Terminal window from the desktop or application menu. Enter the following command:
+1. Open a terminal window from the application menu. Enter the following command:
 
     ```bash
-    raspistill -o image1.jpg
+    raspistill -k
     ```
 
-1. Adjust the camera to point at yourself or an object. You should see a preview appear on the screen for a few seconds, and then this should change briefly while the image is captured. It doesn't matter if the picture is upside-down; we'll come to that later.
+1. You should see a preview appear on the screen. It doesn't matter if the picture is upside-down; you can configure this later. Press `Ctrl + C` to exit the preview.
 
 1. Run the command `ls` to see the files in your home directory; you should see `image1.jpg` listed.
 
@@ -32,7 +32,7 @@ Before booting your Pi, you'll need to connect the camera.
 
 ## Take a picture with Python
 
-1. Open Python 3 (IDLE) from the main menu:
+1. Open **Python 3 (IDLE)** from the main menu:
 
     ![Open Python 3](images/python3-app-menu.png)
 
@@ -48,7 +48,7 @@ Before booting your Pi, you'll need to connect the camera.
 
     camera.start_preview()
     sleep(3)
-    camera.capture('/home/pi/image2.jpg')
+    camera.capture('/home/pi/Desktop/image.jpg')
     camera.stop_preview()
     ```
 
@@ -56,7 +56,7 @@ Before booting your Pi, you'll need to connect the camera.
 
 1. Press `F5` to run the script.
 
-1. Without closing the Python window, return to the file manager window and you'll see the new file `image2.jpg`. Double-click to view the picture.
+1. You should see `image.jpg` saved on your Desktop. Double-click the icon to open the image.
 
 1. If the picture is upside-down you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following lines:
 
@@ -67,7 +67,7 @@ Before booting your Pi, you'll need to connect the camera.
     inside the `with` block, so it becomes:
 
     ```python
-    import picamera
+    from picamera import PiCamera
     from time import sleep
 
     camera = PiCamera()
@@ -75,7 +75,7 @@ Before booting your Pi, you'll need to connect the camera.
     camera.rotation = 180
     camera.start_preview()
     sleep(3)
-    camera.capture('/home/pi/image2.jpg')
+    camera.capture('/home/pi/Desktop/image.jpg')
     camera.stop_preview()
     ```
 
@@ -119,7 +119,7 @@ If you want to take a photograph of yourself with the camera board, you are goin
     camera.start_preview()
     button.wait_for_press()
     sleep(3)
-    camera.capture('/home/pi/image3.jpg')
+    camera.capture('/home/pi/Desktop/image3.jpg')
     camera.stop_preview()
     ```
 
@@ -147,6 +147,7 @@ Now that you have successfully taken individual photographs with your camera, it
             frame += 1
         except KeyboardInterrupt:
             camera.stop_preview()
+            break
     ```
 
     *Because `while True` goes on forever, you have to be able to make it exit gracefully. Using `try` and `except` means it can deal with an exceptional circumstance - if you force it to stop with `Ctrl + C` it will close the camera preview and exit the loop*
