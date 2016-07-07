@@ -64,7 +64,7 @@ Before booting your Pi, you'll need to connect the camera.
     camera.rotation = 180
     ```
 
-    inside the `with` block, so it becomes:
+    after `camera = PiCamera()`, so it becomes:
 
     ```python
     from picamera import PiCamera
