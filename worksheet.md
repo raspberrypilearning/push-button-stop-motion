@@ -169,7 +169,7 @@ Now that you have successfully taken individual photographs with your camera, it
 1. Run the video rendering command:
 
     ```bash
-    avconv -r 10 -qscale 2 -i animation/frame%03d.jpg animation.mp4
+    avconv -r 10 -i animation/frame%03d.jpg -qscale 2 animation.mp4
     ```
 
     *Note you're using `%03d` again - this is a common format which both Python and `avconv` understand, and means the photos will be passed in to the video in order.*
