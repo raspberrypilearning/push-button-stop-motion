@@ -1,0 +1,28 @@
+---
+title: Push Button Stop Motion
+hero_image: images/banner.png
+description: Make your own stop motion animation rig with a push button, using Python
+  Picamera and GPIO
+original_url: https://raspberrypi.org/learning/push-button-stop-motion
+theme: red
+duration: 2
+listed: false
+ingredient: false
+copyedit: true
+curriculum: creator, design-0, programming-0, phys-comp-0, manufacture-0, community-0
+interests: ''
+technologies: rpi, physical computing, python
+site_areas: ''
+steps:
+- title: Introduction
+- title: What you will need
+- title: Push Button Stop Motion
+- title: Connect the camera
+- title: Test the camera
+- title: Take a picture with Python
+- title: Connect a hardware button
+- title: Take a selfie
+- title: Stop motion animation
+- title: Generate the video
+- title: What next?
+
