@@ -2,9 +2,9 @@
 
 - Open a terminal window from the application menu. Enter the following command:
 
- ```bash
- raspistill -k
- ```
+    ```bash
+    raspistill -k
+    ```
 
 - You should see a preview appear on the screen. It doesn't matter if the picture is upside-down; you can configure this later. Press `Ctrl + C` to exit the preview.
 
