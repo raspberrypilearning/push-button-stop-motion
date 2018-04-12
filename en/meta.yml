@@ -14,11 +14,10 @@ technologies: electronic-components, python, pi-camera
 site_areas: projects
 hardware: electronic-components
 software: python
-version: 3
+version: 3.0.1
 last_tested: 2017-01-01
 steps: 
 - title: Introduction
-- title: What you will need
 - title: Push Button Stop Motion
 - title: Connect the camera
 - title: Test the camera
