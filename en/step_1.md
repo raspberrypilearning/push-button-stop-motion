@@ -1,7 +1,7 @@
 ## What you will make
 In this resource, you will make a stop motion animation using a Raspberry Pi and a camera module to take pictures, controlled by a push button connected to the Pi's GPIO pins. The photos will be automatically generated into a video by using the command line tool `avconv`.
 
-![showcase](images/showcase.gif]
+![showcase](images/showcase.gif)nn
 
 --- collapse ---
 ---
