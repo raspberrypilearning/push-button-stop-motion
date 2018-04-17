@@ -1,7 +1,13 @@
 ## What you will make
-In this resource, you will make a stop motion animation using a Raspberry Pi and a camera module to take pictures, controlled by a push button connected to the Pi's GPIO pins, programmed using Python, the picamera library and GPIO Zero. The photos will be automatically generated into a video by using the command line tool `avconv`.
+In this resource, you will make a stop motion animation using a Raspberry Pi and a camera module to take pictures, controlled by a push button connected to the Pi's GPIO pins. The photos will be automatically generated into a video by using the command line tool `avconv`.
 
-## What you will learn
+![showcase](images/showcase.gif)nn
+
+--- collapse ---
+---
+title: What you will learn
+---
+
 By creating a push button stop motion machine with your Raspberry Pi you will learn:
 
 - How to set up and use the Raspberry Pi camera module
@@ -14,4 +20,40 @@ This resource covers elements from the following strands of the [Raspberry Pi Di
 
 - [Combine programming constructs to solve a problem](https://www.raspberrypi.org/curriculum/programming/builder)
 - [Combine inputs and/or outputs to create projects or solve a problem](https://www.raspberrypi.org/curriculum/physical-computing/builder)
+--- /collapse ---
 
+--- collapse ---
+---
+title: What you will need
+---
+
+### Hardware
+
+* Raspberry Pi camera module
+* 1 x Full size breadboard
+* 2 x Male-to-female jumper leads
+* 1 x Tactile button
+
+### Software
+
+You'll need to make sure you have the following packages installed to proceed with the workshop.
+
+- libav-tools
+
+You'll need to be online to install packages.
+
+First update and upgrade your system. Enter the following commands in to the terminal:
+
+```bash
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+Now install the packages you'll need:
+
+```bash
+sudo apt-get install libav-tools
+```
+
+- Test you have `libav-tools` installed by entering `avconv` at the command line. You should see some information about the `avconv` version.
+--- /collapse ---
