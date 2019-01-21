@@ -54,24 +54,24 @@ You should see `image.jpg` saved on your Desktop. Double-click the icon to open 
 
 If the picture is upside-down you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following lines:
 
-    ```python
-    camera.rotation = 180
-    ```
+```python
+camera.rotation = 180
+```
 
-    after `camera = PiCamera()`, so it becomes:
+after `camera = PiCamera()`, so it becomes:
 
-    ```python
-    from picamera import PiCamera
-    from time import sleep
+```python
+from picamera import PiCamera
+from time import sleep
 
-    camera = PiCamera()
+camera = PiCamera()
 
-    camera.rotation = 180
-    camera.start_preview()
-    sleep(3)
-    camera.capture('/home/pi/Desktop/image.jpg')
-    camera.stop_preview()
-    ```
+camera.rotation = 180
+camera.start_preview()
+sleep(3)
+camera.capture('/home/pi/Desktop/image.jpg')
+camera.stop_preview()
+```
 
 --- /task ---
 
