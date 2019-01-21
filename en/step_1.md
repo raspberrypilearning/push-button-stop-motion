@@ -1,5 +1,8 @@
 ## What you will make
-In this resource, you will make a stop motion animation using a Raspberry Pi and a camera module to take pictures, controlled by a push button connected to the Pi's GPIO pins. The photos will be automatically generated into a video by using the command line tool `avconv`.
+
+Make your own stop motion animation video using a Raspberry Pi, Python and a camera module to take pictures, controlled by a push button connected to the Pi's GPIO pins.
+
+You can use LEGO to animate a tower being built, figures acting out a scene, or anything else you can think of!
 
 ![showcase](images/showcase.gif)
 
@@ -36,7 +39,7 @@ title: What you will need
 
 ### Software
 
-You'll need to make sure you have the following packages installed to proceed with the workshop.
+You'll need to make sure you have the following packages installed.
 
 - libav-tools
 
@@ -56,4 +59,14 @@ sudo apt-get install libav-tools
 ```
 
 - Test you have `libav-tools` installed by entering `avconv` at the command line. You should see some information about the `avconv` version.
+--- /collapse ---
+
+--- collapse ---
+---
+title: Additional information for educators
+---
+If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/push-button-stop-motion/print){:target="_blank"}.
+
+You can find the finished code for this project [here](http://rpf.io/p/en/push-button-stop-motion-get){:target="_blank"}.
+
 --- /collapse ---

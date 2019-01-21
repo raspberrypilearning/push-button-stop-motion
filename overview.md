@@ -1,1 +1,0 @@
-In this resource, you will make a stop motion animation using a Raspberry Pi and a camera module to take pictures, controlled by a push button connected to the Pi's GPIO pins, programmed using Python, the picamera library and GPIO Zero. The photos will be automatically generated into a video by using the command line tool `avconv`.

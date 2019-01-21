@@ -1,6 +1,23 @@
-## Push Button Stop Motion
+## Connect the camera
 
-Make your own stop motion animation video with a push button controller, using Python and GPIO Zero.
+Before booting your Pi, you'll need to connect the camera.
 
-You can use LEGO to animate a tower being built, figures acting out a scene, or anything else you can think of!
+![Connect the camera](images/connect-camera.jpg)
 
+--- task ---
+
+Locate the camera port next to the Ethernet port. Lift the tab on the top.
+
+--- /task ---
+
+--- task ---
+
+Place the strip in the connector, with the blue side facing the Ethernet port. While holding the strip in place, push down the tab.
+
+--- /task ---
+
+--- task ---
+
+Turn the power on to boot the Pi.
+
+--- /task ---

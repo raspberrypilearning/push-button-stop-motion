@@ -1,33 +1,34 @@
-## Stop motion animation
+## Generate the video
 
-Now that you have successfully taken individual photographs with your camera, it's time to try combining a series of still images to make a stop motion animation.
+--- task ---
 
-- **IMPORTANT** You must create a new folder to store your stills. In the terminal window, enter `mkdir animation`.
+To generate the video, begin by returning to the terminal window.
 
-- Modify your code to add a loop to keep taking pictures every time the button is pressed:
+--- /task ---
 
-    ```python
-    camera.start_preview()
-    frame = 1
-    while True: 
-        try:
-            button.wait_for_press()
-            camera.capture('/home/pi/animation/frame%03d.jpg' % frame)
-            frame += 1
-        except KeyboardInterrupt:
-            camera.stop_preview()
-            break
-    ```
+--- task ---
 
-    *Because `while True` goes on forever, you have to be able to make it exit gracefully. Using `try` and `except` means it can deal with an exceptional circumstance - if you force it to stop with `Ctrl + C` it will close the camera preview and exit the loop*
+Run the video rendering command:
 
-    *`frame%03d` means the file will be saved as the name "frame" followed by a 3-digit number with leading zeroes - 001, 002, 003, etc. This allows them to be easily sorted into the correct order for the video.*
+```bash
+avconv -r 10 -i animation/frame%03d.jpg -qscale 2 animation.h264
+```
 
-- Now set up your animation subject (e.g. LEGO), ready to start the stop motion animation.
+*Note you're using `%03d` again - this is a common format which both Python and `avconv` understand, and means the photos will be passed in to the video in order.*
 
-- Press the button to capture the first frame, then rearrange the animation subject and press the button again to capture each subsequent frame.
+--- /task ---
 
-- Once all the frames have been captured, press `Ctrl + C` to terminate the program.
+--- task ---
 
-- Open the `animation` folder in the file manager to see your stills collection.
+Play your video using `omxplayer`.
+
+```bash
+omxplayer animation.h264
+```
+
+--- /task ---
+
+You can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
+
+You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, change `animation.h264` to something else.
 
