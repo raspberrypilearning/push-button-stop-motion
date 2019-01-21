@@ -1,51 +1,47 @@
-## Take a picture with Python
+## Connect a hardware button
 
-- Open **Python 3 (IDLE)** from the main menu:
+--- task ---
 
-    ![Open Python 3](images/python3-app-menu.png)
+Using your breadboard and jumper leads, connect the Pi to the button as shown in the diagram below:
 
-- Select `File > New Window` from the menu to open a Python file editor.
+![](images/picamera-gpio-setup.png)
 
-- Carefully enter the following code into the new window (case is important!):
+--- /task ---
 
-    ```python
-    from picamera import PiCamera
-    from time import sleep
+--- task ---
 
-    camera = PiCamera()
+Import `Button` from the `gpiozero` module at the top of the code, create up a `Button` connected to pin 17, and change the `sleep` line to use `button.wait_for_press` like so:
 
-    camera.start_preview()
-    sleep(3)
-    camera.capture('/home/pi/Desktop/image.jpg')
-    camera.stop_preview()
-    ```
+```python
+from picamera import PiCamera
+from time import sleep
+from gpiozero import Button
 
-- Select `File > Save` from the menu (or press `Ctrl + S`) and save as `animation.py`.
+button = Button(17)
+camera = PiCamera()
 
-- Press `F5` to run the script.
+camera.start_preview()
+button.wait_for_press()
+camera.capture('/home/pi/image.jpg')
+camera.stop_preview()
+```
 
-- You should see `image.jpg` saved on your Desktop. Double-click the icon to open the image.
+--- /task ---
 
-- If the picture is upside-down you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following lines:
+--- task ---
 
-    ```python
-    camera.rotation = 180
-    ```
+Save and run your program.
 
-    after `camera = PiCamera()`, so it becomes:
+--- /task ---
 
-    ```python
-    from picamera import PiCamera
-    from time import sleep
+--- task ---
 
-    camera = PiCamera()
+Once the preview has started, press the button connected to your Pi to capture an image.
 
-    camera.rotation = 180
-    camera.start_preview()
-    sleep(3)
-    camera.capture('/home/pi/Desktop/image.jpg')
-    camera.stop_preview()
-    ```
+--- /task ---
 
-- Run the file again and it will overwrite `image2.jpg` with a new image in the correct orientation. Remember to keep these lines in your code while you alter it in the next few steps.
+--- task ---
 
+Return to the file manager window and you should see your `image.jpg`. Again, double-click to view.
+
+--- /task ---

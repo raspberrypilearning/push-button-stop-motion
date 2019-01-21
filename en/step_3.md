@@ -1,12 +1,25 @@
-## Connect the camera
+## Test the camera
 
-Before booting your Pi, you'll need to connect the camera.
+--- task ---
 
-- Locate the camera port next to the Ethernet port. Lift the tab on the top.
+Open a terminal window from the application menu. Enter the following command:
 
-- Place the strip in the connector, with the blue side facing the Ethernet port. While holding the strip in place, push down the tab.
+```bash
+raspistill -k
+```
 
-- Turn the power on to boot the Pi.
+--- /task ---
 
-![Connect the camera](images/connect-camera.jpg)
+You should see a preview appear on the screen. It doesn't matter if the picture is upside-down; you can configure this later. Press `Ctrl + C` to exit the preview.
 
+--- task ---
+
+Run the command `ls` to see the files in your home directory; you should see `image1.jpg` listed.
+
+--- /task ---
+
+--- task ---
+
+Click the file manager icon in the taskbar and you should see some folders and files. Double-click `image1.jpg` to preview it.
+
+--- /task ---

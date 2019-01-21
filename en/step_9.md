@@ -1,20 +1,8 @@
-## Generate the video
+## What next?
 
-- To generate the video, begin by returning to the terminal window.
-
-- Run the video rendering command:
-
-    ```bash
-    avconv -r 10 -i animation/frame%03d.jpg -qscale 2 animation.h264
-    ```
-
-    *Note you're using `%03d` again - this is a common format which both Python and `avconv` understand, and means the photos will be passed in to the video in order.*
-
-- You can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
-
-    ```bash
-    omxplayer animation.h264
-    ```
-
-- You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, change `animation.mp4` to something else.
+- Why not share your video? Try uploading it to YouTube!
+- Now you know how to wire up a button to take a picture with the camera module, what else could you use this for?
+- Could you do something similar for a time-lapse video?
+- What could you use instead of a button? A motion sensor?
+- Instead of making a video, what else could you do with photos taken with the camera module? You could post them to Twitter, or another social media site.
 
