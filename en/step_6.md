@@ -10,7 +10,7 @@ Add a line to your code to tell the program to sleep briefly before capturing an
 camera.start_preview()
 button.wait_for_press()
 sleep(3)
-camera.capture('/home/pi/Desktop/image3.jpg')
+camera.capture('/home/pi/Desktop/image.jpg')
 camera.stop_preview()
 ```
 
