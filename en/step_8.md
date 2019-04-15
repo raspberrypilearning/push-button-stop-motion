@@ -16,8 +16,6 @@ avconv -r 10 -i animation/frame%03d.jpg -qscale 2 animation.h264
 
 *Note you're using `%03d` again - this is a common format which both Python and `avconv` understand, and means the photos will be passed in to the video in order.*
 
---- /task ---
-
 --- collapse ---
 
 ---
@@ -40,6 +38,9 @@ sudo apt-get install libav-tools
 ```
 
 --- /collapse ---
+
+
+--- /task ---
 
 --- task ---
 
