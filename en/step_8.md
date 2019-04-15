@@ -21,7 +21,7 @@ avconv -r 10 -i animation/frame%03d.jpg -qscale 2 animation.h264
 --- collapse ---
 
 ---
-title: avconv: command not found ?
+title: "avconv: command not found ?"
 ---
 
 If you receive the error `avconv: command not found` you will need to to install `libav-tools`.
