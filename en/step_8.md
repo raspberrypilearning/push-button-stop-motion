@@ -11,18 +11,18 @@ To generate the video, begin by returning to the terminal window.
 Run the video rendering command:
 
 ```bash
-avconv -r 10 -i animation/frame%03d.jpg -qscale 2 animation.h264
+ffmpeg -r 10 -i animation/frame%03d.jpg -qscale 2 animation.h264
 ```
 
-*Note you're using `%03d` again - this is a common format which both Python and `avconv` understand, and means the photos will be passed in to the video in order.*
+*Note you're using `%03d` again - this is a common format which both Python and `ffmpeg` understand, and means the photos will be passed in to the video in order.*
 
 --- collapse ---
 
 ---
-title: "avconv: command not found ?"
+title: "ffmpeg: command not found ?"
 ---
 
-If you receive the error `avconv: command not found` you will need to to install `libav-tools`.
+If you receive the error `ffmpeg: command not found` you will need to to install `ffmpeg`.
 
 Enter the following commands in to the terminal to update and upgrade your system:
 
@@ -31,10 +31,10 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-Now install the `libav-tools` package:
+Now install the `ffmpeg` package:
 
 ```bash
-sudo apt-get install libav-tools
+sudo apt-get install ffmpeg
 ```
 
 --- /collapse ---

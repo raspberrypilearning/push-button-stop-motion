@@ -17,7 +17,7 @@ By creating a push button stop motion machine with your Raspberry Pi you will le
 - How to use the Python picamera library to capture photographs
 - How to connect a button to the GPIO pins on a Raspberry Pi
 - How to control the camera with a button using GPIO Zero
-- How to generate a video from the command line using `avconv`
+- How to generate a video from the command line using `ffmpeg`
 
 This resource covers elements from the following strands of the [Raspberry Pi Digital Making Curriculum](https://www.raspberrypi.org/curriculum/):
 
@@ -41,7 +41,7 @@ title: What you will need
 
 You'll need to make sure you have the following packages installed.
 
-- libav-tools
+- ffmpeg
 
 You'll need to be online to install packages.
 
@@ -55,10 +55,10 @@ sudo apt-get upgrade
 Now install the packages you'll need:
 
 ```bash
-sudo apt-get install libav-tools
+sudo apt-get install ffmpeg
 ```
 
-- Test you have `libav-tools` installed by entering `avconv` at the command line. You should see some information about the `avconv` version.
+- Test you have `ffmpeg` installed by entering `ffmpeg` at the command line. You should see some information about the `ffmpeg` version.
 --- /collapse ---
 
 --- collapse ---
