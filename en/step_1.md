@@ -39,26 +39,14 @@ title: What you will need
 
 ### Software
 
-You'll need to make sure you have the following packages installed.
-
-- libav-tools
-
-You'll need to be online to install packages.
-
-First update and upgrade your system. Enter the following commands in to the terminal:
+ffmpeg should be preinstalled on the latest version of Raspberry Pi OS. If it is not installed, open a terminal and type:
 
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
+sudo apt install ffmpeg
 ```
 
-Now install the packages you'll need:
-
-```bash
-sudo apt-get install libav-tools
-```
-
-- Test you have `libav-tools` installed by entering `avconv` at the command line. You should see some information about the `avconv` version.
 --- /collapse ---
 
 --- collapse ---
