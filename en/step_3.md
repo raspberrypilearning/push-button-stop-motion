@@ -14,6 +14,16 @@ You should see a preview appear on the screen. It doesn't matter if the picture 
 
 --- task ---
 
+To save an image you can use the following command:
+
+```bash
+raspistill -o image1.jpg
+```
+
+---/task ---
+
+--- task ---
+
 Run the command `ls` to see the files in your home directory; you should see `image1.jpg` listed.
 
 --- /task ---
