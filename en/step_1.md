@@ -55,6 +55,6 @@ title: Additional information for educators
 ---
 If you need to print this project, please use the [printer-friendly version](https://projects.raspberrypi.org/en/projects/push-button-stop-motion/print){:target="_blank"}.
 
-You can find the finished code for this project [here](http://rpf.io/p/en/push-button-stop-motion-get){:target="_blank"}.
+You can find the finished code for this project [here](https://rpf.io/p/en/push-button-stop-motion-get){:target="_blank"}.
 
 --- /collapse ---
