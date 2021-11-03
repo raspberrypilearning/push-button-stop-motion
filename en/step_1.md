@@ -1,5 +1,7 @@
 ## What you will make
 
+[[[camera-bullseye]]]
+
 Make your own stop motion animation video using a Raspberry Pi, Python and a camera module to take pictures, controlled by a push button connected to the Pi's GPIO pins.
 
 You can use LEGO to animate a tower being built, figures acting out a scene, or anything else you can think of!
