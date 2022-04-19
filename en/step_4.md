@@ -1,5 +1,7 @@
 ## Take a picture with Python
 
+[[[camera-bullseye]]]
+
 --- task ---
 
 Open **Python 3 (IDLE)** from the main menu:
