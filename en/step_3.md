@@ -5,7 +5,7 @@
 Open a terminal window from the application menu. Enter the following command:
 
 ```bash
-raspistill -k
+libcamera-hello
 ```
 
 --- /task ---
@@ -17,19 +17,19 @@ You should see a preview appear on the screen. It doesn't matter if the picture 
 To save an image you can use the following command:
 
 ```bash
-raspistill -o image1.jpg
+libcamera-jpeg -o test.jpg
 ```
 
 ---/task ---
 
 --- task ---
 
-Run the command `ls` to see the files in your home directory; you should see `image1.jpg` listed.
+Run the command `ls` to see the files in your home directory; you should see `test.jpg` listed.
 
 --- /task ---
 
 --- task ---
 
-Click the file manager icon in the taskbar and you should see some folders and files. Double-click `image1.jpg` to preview it.
+Click the file manager icon in the taskbar and you should see some folders and files. Double-click `test.jpg` to preview it.
 
 --- /task ---
