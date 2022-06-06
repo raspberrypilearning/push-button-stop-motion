@@ -19,13 +19,15 @@ version: 3.0.1
 last_tested: 2017-01-01
 steps:
 - title: Introduction
-  completion: engaged
 - title: Connect the camera
 - title: Test the camera
+  completion:
+  - engaged
 - title: Take a picture with Python
 - title: Connect a hardware button
 - title: Take a selfie
 - title: Stop motion animation
-  completion: internal
 - title: Generate the video
+  completion:
+  - internal
 - title: What next?
