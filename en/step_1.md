@@ -6,7 +6,7 @@ Make your own stop motion animation video using a Raspberry Pi, Python and a cam
 
 You can use LEGO to animate a tower being built, figures acting out a scene, or anything else you can think of!
 
-![showcase](images/showcase.gif)
+![Animation showing a tangerine being peeled on a table, and then a second tangerine hops on the first and starts being peeled, and then a third tangerine with a smiley face hops on the first two. The tower of tangerines walk off screen](images/showcase.gif)
 
 --- collapse ---
 ---
