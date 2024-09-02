@@ -1,34 +1,28 @@
-## Take a picture with Python
-
-[[[camera-bullseye]]]
+## Connect a hardware button
 
 --- task ---
 
-Open **Python 3 (IDLE)** from the main menu:
+Using your breadboard and jumper leads, connect the Pi to the button as shown in the diagram below:
 
-![Open Python 3](images/python3-app-menu.png)
+![The image depicts a Raspberry Pi connected to a breadboard via jumper wires. The Raspberry Pi's GPIO pins are connected to a red button on the breadboard. Specifically, two wires are shown: one black wire connected to a ground (GND) pin on the Raspberry Pi and to the breadboard, and one yellow wire connected to a GPIO pin (likely GP17) and the breadboard. The breadboard is labeled with rows and columns, where the button is placed in the middle section.](images/picamera-gpio-setup.png)
 
 --- /task ---
 
 --- task ---
 
-Select `File > New Window` from the menu to open a Python file editor.
-
---- /task ---
-
---- task ---
-
-Carefully enter the following code into the new window (case is important!):
+Import `Button` from the `gpiozero` module at the top of the code, create up a `Button` connected to pin 17, and change the `sleep` line to use `button.wait_for_press` like so:
 
 ```python
-from picamera import PiCamera
+from picamzero import Camera
 from time import sleep
+from gpiozero import Button
 
-camera = PiCamera()
+button = Button(17)
+camera = Camera()
 
 camera.start_preview()
-sleep(3)
-camera.capture('/home/pi/Desktop/image.jpg')
+button.wait_for_press()
+camera.capture("/home/pi/Desktop/image.jpg")
 camera.stop_preview()
 ```
 
@@ -36,50 +30,18 @@ camera.stop_preview()
 
 --- task ---
 
-Select `File > Save` from the menu (or press `Ctrl + S`) and save as `animation.py`.
+Save and run your program.
 
 --- /task ---
 
 --- task ---
 
-Press `F5` to run your program.
+Once the preview has started, press the button connected to your Pi to capture an image.
 
 --- /task ---
 
 --- task ---
 
-You should see `image.jpg` saved on your Desktop. Double-click the icon to open the image.
+Return to the desktop and you should see your `image.jpg`. Again, double-click to view.
 
 --- /task ---
-
---- task ---
-
-If the picture is upside-down you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following lines:
-
-```python
-camera.rotation = 180
-```
-
-after `camera = PiCamera()`, so it becomes:
-
-```python
-from picamera import PiCamera
-from time import sleep
-
-camera = PiCamera()
-
-camera.rotation = 180
-camera.start_preview()
-sleep(3)
-camera.capture('/home/pi/Desktop/image.jpg')
-camera.stop_preview()
-```
-
---- /task ---
-
---- task ---
-
-Run the file again and it will overwrite `image.jpg` with a new image in the correct orientation. Remember to keep these lines in your code while you alter it in the next few steps.
-
---- /task ---
-

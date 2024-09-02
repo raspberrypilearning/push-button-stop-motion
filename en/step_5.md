@@ -1,34 +1,17 @@
-## Connect a hardware button
+## Take a selfie
+
+If you want to take a photograph of yourself with the camera board, you are going to have to add in a delay to enable you to get into position. You can do this by modifying your program.
 
 --- task ---
 
-Using your breadboard and jumper leads, connect the Pi to the button as shown in the diagram below:
-
-![](images/picamera-gpio-setup.png)
-
---- /task ---
-
---- task ---
-
-Import `Button` from the `gpiozero` module at the top of the code, create up a `Button` connected to pin 17, and change the `sleep` line to use `button.wait_for_press` like so:
+Add a line to your code to tell the program to sleep briefly before capturing an image, as below:
 
 ```python
-from picamera import PiCamera
-from time import sleep
-from gpiozero import Button
-
-button = Button(17)
-camera = PiCamera()
-
 camera.start_preview()
 button.wait_for_press()
-camera.capture('/home/pi/image.jpg')
-camera.stop_preview()
+sleep(3)
+camera.capture("/home/pi/Desktop/image.jpg")
 ```
-
---- /task ---
-
---- task ---
 
 Save and run your program.
 
@@ -36,12 +19,12 @@ Save and run your program.
 
 --- task ---
 
-Once the preview has started, press the button connected to your Pi to capture an image.
+Press the button and try to take a selfie. Be sure to keep the camera still! Ideally, it should be mounted in position.
 
 --- /task ---
 
 --- task ---
 
-Return to the file manager window and you should see your `image.jpg`. Again, double-click to view.
+Again, feel free to check the image in the file manager. You can run the program again to take another selfie.
 
 --- /task ---

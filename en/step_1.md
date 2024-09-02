@@ -36,7 +36,7 @@ title: What you will need
 
 * Raspberry Pi camera module
 * 1 x Full size breadboard
-* 2 x Male-to-female jumper leads
+* 2 x Pin-socket jumper leads
 * 1 x Tactile button
 
 ### Software
