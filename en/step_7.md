@@ -30,5 +30,5 @@ vlc animation.mp4
 
 You can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
 
-You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, change `animation.h264` to something else.
+You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, change `animation.mp4` to something else.
 

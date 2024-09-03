@@ -12,19 +12,25 @@ Using your breadboard and jumper leads, connect the Pi to the button as shown in
 
 Import `Button` from the `gpiozero` module at the top of the code, create up a `Button` connected to pin 17, and change the `sleep` line to use `button.wait_for_press` like so:
 
-```python
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 1
+line_highlights: 3, 5, 9
+---
 from picamzero import Camera
 from time import sleep
 from gpiozero import Button
 
 button = Button(17)
-camera = Camera()
+cam = Camera()
 
-camera.start_preview()
+cam.start_preview()
 button.wait_for_press()
-camera.capture("/home/pi/Desktop/image.jpg")
-camera.stop_preview()
-```
+cam.take_photo("image.jpg")
+cam.stop_preview()
+--- /code ---
 
 --- /task ---
 

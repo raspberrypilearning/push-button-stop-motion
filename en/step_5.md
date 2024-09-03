@@ -6,12 +6,18 @@ If you want to take a photograph of yourself with the camera board, you are goin
 
 Add a line to your code to tell the program to sleep briefly before capturing an image, as below:
 
-```python
-camera.start_preview()
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 8
+line_highlights: 10
+---
+cam.start_preview()
 button.wait_for_press()
 sleep(3)
-camera.capture("/home/pi/Desktop/image.jpg")
-```
+cam.take_photo("image.jpg")
+--- /code ---
 
 Save and run your program.
 

@@ -4,7 +4,7 @@ Now that you have successfully taken individual photographs with your camera, it
 
 --- task ---
 
-**IMPORTANT** You must create a new folder to store your stills. In the terminal window, enter `mkdir animation`.
+**IMPORTANT** You must create a new folder to store your stills. In the folder where you saved your Python code, create a folder called `animation`. 
 
 --- /task ---
 
@@ -12,18 +12,22 @@ Now that you have successfully taken individual photographs with your camera, it
 
 Modify your code to add a loop to keep taking pictures every time the button is pressed:
 
-```python
-camera.start_preview()
+--- code ---
+---
+language: python
+line_numbers: true
+---
+cam.start_preview()
 frame = 1
 while True: 
     try:
         button.wait_for_press()
-        camera.capture('/home/pi/animation/frame%03d.jpg' % frame)
+        cam.take_photo('/animation/frame%03d.jpg' % frame)
         frame += 1
     except KeyboardInterrupt:
         camera.stop_preview()
         break
-```
+--- /code ---
 
 *Because `while True` goes on forever, you have to be able to make it exit gracefully. Using `try` and `except` means it can deal with an exceptional circumstance - if you force it to stop with `Ctrl + C` it will close the camera preview and exit the loop*
 
