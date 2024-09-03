@@ -1,7 +1,5 @@
 ## Take a picture with Python
 
-[[[camera-bullseye]]]
-
 --- task ---
 
 Open **Thonny** from the **Programming** menu:
@@ -14,16 +12,22 @@ Open **Thonny** from the **Programming** menu:
 
 Carefully enter the following code into the new window (case is important!):
 
-```python
+--- code ---
+---
+language: python
+line_numbers: true
+---
 from picamzero import Camera
 from time import sleep
 
-camera = Camera()
+cam = Camera()
 
-camera.start_preview()
+cam.start_preview()
 sleep(3)
-camera.take_photo("/home/pi/Desktop/image.jpg")
-```
+cam.take_photo("image.jpg")
+cam.stop_preview()
+
+--- /code ---
 
 --- /task ---
 
@@ -41,37 +45,35 @@ Press `Run` to run your program.
 
 --- task ---
 
-You should see `image.jpg` saved on your Desktop. Double-click the icon to open the image.
+You should see `image.jpg` saved in the same folder as you saved your program. Double-click the icon to open the image.
 
 --- /task ---
 
---- task ---
+--- collapse ---
+---
+title: My picture is upside down
+---
 
-If the picture is upside-down you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following lines:
+If the picture is upside-down you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following line of code:
 
-```python
-camera.pc2.rotation = 180
-```
-
-after `camera = Camera()`, so it becomes:
-
-```python
+--- code ---
+---
+language: python
+line_numbers: true
+line_number_start: 1
+line_highlights: 5
+---
 from picamzero import Camera
 from time import sleep
 
-camera = Camera()
-
-camera.pc2.rotation = 180
-camera.start_preview()
+cam = Camera()
+cam.flip_camera(vflip=True)
+cam.start_preview()
 sleep(3)
-camera.take_photo("/home/pi/Desktop/image.jpg")
-```
-
---- /task ---
-
---- task ---
+cam.take_photo("image.jpg")
+--- /code ---
 
 Run the file again and it will overwrite `image.jpg` with a new image in the correct orientation. Remember to keep these lines in your code while you alter it in the next few steps.
 
---- /task ---
+--- /collapse ---
 
