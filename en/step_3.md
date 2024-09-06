@@ -1,5 +1,7 @@
 ## Take a picture with Python
 
+The Python picamzero library allows you to control your Camera Module and create amazing projects. Follow the [instructions](https://raspberrypifoundation.github.io/picamera-zero){:target="blank"} to install it.
+
 --- task ---
 
 Open **Thonny** from the **Programming** menu:
