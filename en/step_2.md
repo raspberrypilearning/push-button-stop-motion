@@ -11,7 +11,7 @@ Before booting your Pi, you'll need to connect the camera.
 Open a terminal window from the application menu. Enter the following command:
 
 ```bash
-libcamera-hello
+rpicam-hello
 ```
 
 --- /task ---
@@ -23,7 +23,7 @@ You should see a preview appear on the screen. It doesn't matter if the picture 
 To save an image you can use the following command:
 
 ```bash
-libcamera-jpeg -o test.jpg
+rpicam-still -o test.jpg
 ```
 
 ---/task ---
