@@ -1,34 +1,7 @@
-## Generate the video
+## What next?
 
---- task ---
-
-To generate the video, begin by returning to the terminal window.
-
---- /task ---
-
---- task ---
-
-Run the video rendering command:
-
-```bash
-ffmpeg -r 10 -i animation/frame%03d.jpg -qscale 2 animation.mp4
-```
-
-*Note you're using `%03d` again - this is a common format which both Python and `ffmpeg` understand, and means the photos will be passed in to the video in order.*
-
---- /task ---
-
---- task ---
-
-Play your video using `vlc`.
-
-```bash
-vlc animation.mp4
-```
-
---- /task ---
-
-You can adjust the frame rate by editing the rendering command. Try changing `-r 10` (10 frames per second) to another number.
-
-You can also change the filename of the rendered video to stop it from overwriting your first attempt. To do this, change `animation.h264` to something else.
+- Why not share your video? Try uploading it to YouTube!
+- Now you know how to wire up a button to take a picture with the camera module, what else could you use this for?
+- Could you do something similar for a time-lapse video?
+- What could you use instead of a button? A motion sensor?
 
