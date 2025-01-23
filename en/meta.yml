@@ -29,6 +29,6 @@ steps:
 - title: Generate the video
   completion:
   - internal
+- title: What next?
   completion:
   - external
-- title: What next?
