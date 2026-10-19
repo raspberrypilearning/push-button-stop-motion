@@ -1,16 +1,17 @@
-from picamera import PiCamera
+from picamzero import Camera
 from time import sleep
 from gpiozero import Button
 
 button = Button(17)
-camera = PiCamera()
+cam = Camera()
 
-camera.start_preview()
+cam.start_preview()
 frame = 1
 while True:
     try:
         button.wait_for_press()
-        camera.capture('/home/pi/animation/frame%03d.jpg' % frame)
+        cam.take_photo(f'animation/frame{frame:03d}.jpg')
         frame += 1
     except KeyboardInterrupt:
-        camera.stop_preview()
+        cam.stop_preview()
+        break

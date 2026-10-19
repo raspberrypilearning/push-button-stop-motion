@@ -22,10 +22,10 @@ frame = 1
 while True: 
     try:
         button.wait_for_press()
-        cam.take_photo(f'/animation/frame{frame:03d}.jpg')        
+        cam.take_photo(f'animation/frame{frame:03d}.jpg')        
         frame += 1
     except KeyboardInterrupt:
-        camera.stop_preview()
+        cam.stop_preview()
         break
 --- /code ---
 
